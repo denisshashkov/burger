@@ -1,0 +1,38 @@
+@mixin btn {
+  text-decoration: none;
+padding: 11px 15px;
+background-color: #e45028;
+border: none;
+border-radius: 5px;
+color: #ffffff;
+font-family: 'Ubuntu';
+font-size: 13px;
+font-weight: 500;
+line-height: 30px;
+text-transform: uppercase;
+&:hover{
+  cursor: pointer;
+}
+}
+
+.container{
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  min-width: 940px + 20px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  min-height: 650px;
+  background-color: black;
+}
