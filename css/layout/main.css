@@ -5,6 +5,8 @@
   src: url("../../fonts/lifehack_medium-webfont.woff2") format("woff2"), url("../../fonts/lifehack_medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -12,6 +14,13 @@
   src: url("../../fonts/gagalin-regular-webfont.woff2") format("woff2"), url("../../fonts/gagalin-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .container {
@@ -63,6 +72,11 @@ header {
   align-items: center;
 }
 
+.menu__link:hover {
+  transition: 0.3s;
+  color: #EAAA38;
+}
+
 .menu__link {
   text-decoration: none;
   margin-left: 13px;
@@ -73,6 +87,8 @@ header {
   line-height: 30px;
   text-transform: uppercase;
 }
+
+
 
 .btn {
   text-decoration: none;
@@ -90,6 +106,8 @@ header {
 
 .btn:hover {
   cursor: pointer;
+  background-color: #c1401e;
+  transition: 0.3s;
 }
 
 .menu__item::before {
@@ -108,9 +126,6 @@ header {
 
 .section-first-screen {
   background: url("../../image/first-screen/fon.png") center center/cover no-repeat;
-  background-size: 100%;
-  height: 100vh;
-  min-height: 650px;
   margin: 0;
 }
 
@@ -177,7 +192,14 @@ header {
   cursor: pointer;
 }
 
+.scroll__down:focus {
+  outline: none;
+}
 
+.scroll__down:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
 
 
 .we {
@@ -228,7 +250,7 @@ header {
   display: flex;
 }
 
-.advantage__heading {
+article {
   color: #2f3234;
   font-family: "Lifehackmedium";
   font-size: 24px;
@@ -270,13 +292,16 @@ header {
 .reviews__item {
   height: 50%;
   width: 25%;
+  
 }
 
-.review {
+.review{
   position: relative;
   color: #fff;
   filter: grayscale(100%);
+  
 }
+
 
 .review:hover .review__hover {
   opacity: 1;
@@ -298,6 +323,8 @@ header {
   object-fit: cover;
 }
 
+
+
 .review__hover {
   position: absolute;
   top: 0;
@@ -305,10 +332,26 @@ header {
   right: 0;
   bottom: 0;
   opacity: 0;
-  transform: scale(0.8);
-  transition: 0.3s;
+  transform: scale(0.9);
+  transition: 0.1s;
   padding: 45px 30px 47px 19px;
+  
 }
+
+
+.review__hover:hover{
+  background:rgba(30,31,31,0.7);
+  
+}
+
+.review__name {
+  color: #ffffff;
+  font-family: 'Gagalinregular';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28.11px;
+}
+
 
 .review__text {
   margin-top: 30px;
@@ -319,6 +362,29 @@ header {
   font-size: 14px;
   font-weight: 300;
   line-height: 24px;
+}
+
+
+.btn--review {
+  width: 110px;
+  height: 35px;
+  background-color: #2f3234;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Ubuntu';
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+
+
+.btn--review:hover {
+  background-color: #1f2122;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .order {
@@ -368,19 +434,7 @@ header {
   line-height: 63.99px;
 }
 
-.btn--review {
-  width: 110px;
-  height: 35px;
-  background-color: #2f3234;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  font-family: 'Ubuntu';
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 30px;
-  text-transform: uppercase;
-}
+
 
 .sidebar {
   width: 30px;
@@ -394,9 +448,10 @@ header {
 .nav__list {
   list-style: none;
   display: block;
+  padding: 0;
 }
 
-.nav__item{
+.nav__item {
   position: relative;
   margin-bottom: 15px;
 }
@@ -411,13 +466,13 @@ header {
   background-color: #ffffff;
 }
 
-.nav__item--active::after{
+.nav__item--active::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border: 1px solid #ffffff;
@@ -425,20 +480,21 @@ header {
 }
 
 
-.nav__item:hover::after{
+.nav__item:hover::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border: 1px solid #ffffff;
   border-radius: 50px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.3s;
 }
-.nav__item--active{
+
+.nav__item--active {
   position: relative;
 }
