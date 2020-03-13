@@ -12,48 +12,65 @@ header {
   align-items: center;
 }
 
-
-.menu {
-  
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 0;
-    list-style: none;
-  }
-  &__item{
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-  }
-  &__link {
-    text-decoration: none;
-    margin-left: 13px;
-    color: #ffffff;
-    font-family: 'Ubuntu';
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 30px;
-    text-transform: uppercase;
-  }
+.menu{
+&__list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  list-style: none;
+}
+&__item {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+&__link:hover {
+  transition: 0.3s;
+  color: #EAAA38;
+}
+&__link {
+  text-decoration: none;
+  margin-left: 13px;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: uppercase;
+}
 }
 
-.btn{
-  @include btn;
+
+
+.btn {
+  text-decoration: none;
+  padding: 11px 15px;
+  background-color: #e45028;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: uppercase;
+&:hover {
+  cursor: pointer;
+  background-color: #c1401e;
+  transition: 0.3s;
+}
 }
 
-.menu__item::before{
+.menu__item::before {
   content: "";
-    margin-left: 13px;
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: #fff;
+  margin-left: 13px;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.menu__item:first-child {
-  &:before {
-    display: none;
-  }
+.menu__item:first-child:before {
+  display: none;
 }

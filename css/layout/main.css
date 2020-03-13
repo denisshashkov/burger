@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic-ext');
-
-
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic-ext");
 @font-face {
   font-family: "lifehackmedium";
   src: url("../../fonts/lifehack_medium-webfont.woff2") format("woff2"), url("../../fonts/lifehack_medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  
 }
-
 @font-face {
   font-family: "gagalinregular";
   src: url("../../fonts/gagalin-regular-webfont.woff2") format("woff2"), url("../../fonts/gagalin-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: #c1401e;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
 }
 
 html,
@@ -66,18 +67,15 @@ header {
   padding-left: 0;
   list-style: none;
 }
-
 .menu__item {
   color: #ffffff;
   display: flex;
   align-items: center;
 }
-
 .menu__link:hover {
   transition: 0.3s;
   color: #EAAA38;
 }
-
 .menu__link {
   text-decoration: none;
   margin-left: 13px;
@@ -88,8 +86,6 @@ header {
   line-height: 30px;
   text-transform: uppercase;
 }
-
-
 
 .btn {
   text-decoration: none;
@@ -104,7 +100,6 @@ header {
   line-height: 30px;
   text-transform: uppercase;
 }
-
 .btn:hover {
   cursor: pointer;
   background-color: #c1401e;
@@ -142,7 +137,6 @@ header {
   flex-flow: column;
   justify-content: center;
 }
-
 .slogan__title {
   color: #f9b43b;
   font-family: "gagalinregular";
@@ -150,7 +144,6 @@ header {
   font-weight: 400;
   line-height: 85px;
 }
-
 .slogan__text {
   font-family: "lifehackmedium";
   width: 406px;
@@ -174,7 +167,6 @@ header {
 .cover__image {
   align-items: center;
 }
-
 .cover__image--pic {
   width: 417px;
   height: 424px;
@@ -184,7 +176,6 @@ header {
   display: flex;
   justify-content: center;
 }
-
 .scroll__down {
   width: 29px;
   height: 14px;
@@ -192,16 +183,75 @@ header {
   border: none;
   cursor: pointer;
 }
-
 .scroll__down:focus {
   outline: none;
 }
-
 .scroll__down:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
 
+.sidebar {
+  width: 30px;
+  position: fixed;
+  right: 50px;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__list {
+  list-style: none;
+  display: block;
+  padding: 0;
+}
+
+.nav__item {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.nav__item::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50px;
+  background-color: #ffffff;
+}
+
+.nav__item--active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+}
+
+.nav__item:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav__item--active {
+  position: relative;
+}
 
 .we {
   background: url(../../image/we/bg.png) center center/cover no-repeat;
@@ -294,16 +344,13 @@ article {
 .reviews__item {
   height: 50%;
   width: 25%;
-  
 }
 
-.review{
+.review {
   position: relative;
   color: #fff;
   filter: grayscale(100%);
-  
 }
-
 
 .review:hover .review__hover {
   opacity: 1;
@@ -325,8 +372,6 @@ article {
   object-fit: cover;
 }
 
-
-
 .review__hover {
   position: absolute;
   top: 0;
@@ -337,23 +382,19 @@ article {
   transform: scale(0.9);
   transition: 0.1s;
   padding: 45px 30px 47px 19px;
-  
 }
 
-
-.review__hover:hover{
-  background:rgba(30,31,31,0.7);
-  
+.review__hover:hover {
+  background: rgba(30, 31, 31, 0.7);
 }
 
 .review__name {
   color: #ffffff;
-  font-family: 'Gagalinregular';
+  font-family: "Gagalinregular";
   font-size: 14px;
   font-weight: 400;
   line-height: 28.11px;
 }
-
 
 .review__text {
   margin-top: 30px;
@@ -366,7 +407,6 @@ article {
   line-height: 24px;
 }
 
-
 .btn--review {
   width: 110px;
   height: 35px;
@@ -374,29 +414,53 @@ article {
   border: none;
   color: #fff;
   border-radius: 5px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-size: 13px;
   font-weight: 500;
   line-height: 30px;
   text-transform: uppercase;
 }
 
+.btn--review:hover {
+  background-color: #1f2122;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 .order {
   width: 48%;
   display: flex;
   flex-flow: column;
-  margin-left: 20px;
+  margin-right: 10px;
 }
 
 .form-wrap {
   display: flex;
+  padding: 40px 48px 0px 78px;
 }
 
 .order-section {
-  background: url("../../image/order/2-layers.png") center center / cover no-repeat;
+  background: url("../../image/order/2-layers.png") center center/cover no-repeat;
   height: 100vh;
   min-height: 650px;
+}
+
+.section__title {
+  display: flex;
+  justify-content: center;
+  color: #f9b43b;
+  font-family: "Gagalinregular";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 47px;
+}
+
+.order-left {
+  padding-right: 20px;
+}
+
+.order-right {
+  padding-right: 30px;
 }
 
 .order__row {
@@ -413,9 +477,8 @@ article {
   margin-right: 0;
 }
 
-
 .order__title {
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 5px;
@@ -424,15 +487,14 @@ article {
 
 .order__input {
   width: 100%;
-  padding: 8px 1px;
+  padding: 10px 0px;
   border: none;
   border-radius: 5px;
 }
 
 .order__input--textarea {
-
-  width: 460px;
-  height: 109px;
+  width: 455px;
+  height: 104px;
   border: 1px solid #d1cfcb;
   border-radius: 5px;
   background-color: #ffffff;
@@ -441,35 +503,40 @@ article {
 
 .switch-controls {
   display: flex;
+  margin-top: 5px;
 }
 
-.switch-controls__buttons{
+.switch-controls-check {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.switch-controls__buttons {
   margin-right: 10px;
 }
 
 .switch-controls__title {
   color: #ffffff;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-size: 14px;
   font-weight: 300;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
-.switch-controls__title:last-child{
+.switch-controls__title:last-child {
   margin-right: 0;
 }
 
-.switch-controls__radio{
+.switch-controls__radio {
   position: absolute;
   left: -9999px;
 }
 
-.switch-controls__radio:checked+.switch-controls__visible:after{
+.switch-controls__radio:checked + .switch-controls__visible:after {
   width: 7px;
   height: 7px;
 }
-
-
 
 .switch-controls__visible {
   width: 15px;
@@ -477,7 +544,15 @@ article {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
+  background: #fdfdfd;
+}
+.switch-controls__visible--checkbox {
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
   background: #fdfdfd;
 }
 
@@ -491,94 +566,34 @@ article {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: .3s;
+  transition: 0.3s;
   background: #e35028;
 }
 
-
-
-
-
-
-.btn--review:hover {
-  background-color: #1f2122;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-
-
-.section__title {
-  display: flex;
-  justify-content: center;
-  color: #f9b43b;
-  font-family: 'Gagalinregular';
-  font-size: 72px;
-  font-weight: 400;
-  line-height: 63.99px;
-}
-
-
-
-.sidebar {
-  width: 30px;
-  position: fixed;
-  right: 50px;
-  top: 80px;
-  display: flex;
-  justify-content: center;
-}
-
-.nav__list {
-  list-style: none;
+.switch-controls__visible--checkbox::after {
+  content: "";
   display: block;
-  padding: 0;
-}
-
-.nav__item {
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.nav__item::before {
-  content: '';
-  display: block;
-  position: relative;
-  width: 6px;
-  height: 6px;
-  border-radius: 50px;
-  background-color: #ffffff;
-}
-
-.nav__item--active::after {
-  content: '';
-  display: block;
+  width: 0px;
+  height: 0px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ffffff;
-  border-radius: 50px;
-}
-
-
-.nav__item:hover::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ffffff;
-  border-radius: 50px;
-  cursor: pointer;
   transition: 0.3s;
 }
 
-.nav__item--active {
-  position: relative;
+.switch-controls__radio:checked + .switch-controls__visible--checkbox::after {
+  background-image: url("../../image/order/w128h1281338911632checkmark2.png");
+  width: 11px;
+  height: 9px;
+}
+
+.order__clear {
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-left: 20px;
+  cursor: pointer;
 }

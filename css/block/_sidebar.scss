@@ -10,9 +10,10 @@
 .nav__list {
   list-style: none;
   display: block;
+  padding: 0;
 }
 
-.nav__item{
+.nav__item {
   position: relative;
   margin-bottom: 15px;
 }
@@ -27,13 +28,13 @@
   background-color: #ffffff;
 }
 
-.nav__item--active::after{
+.nav__item--active::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border: 1px solid #ffffff;
@@ -41,20 +42,21 @@
 }
 
 
-.nav__item:hover::after{
+.nav__item:hover::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border: 1px solid #ffffff;
   border-radius: 50px;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.nav__item--active{
+
+.nav__item--active {
   position: relative;
 }

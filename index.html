@@ -298,7 +298,7 @@
   <div class="container">
     <h2 class="section__title">Закажите доставку</h2>
     <div class="form-wrap">
-    <form class="order">
+    <form class="order-left">
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Имя</div>
@@ -336,7 +336,7 @@
     </form>
 
 
-    <form class="order">
+    <form class="order-right">
       <div class="order__row">
         <label class="order_block">
           <div class="order__title">Комментарий</div>
@@ -362,11 +362,26 @@
           <div class="switch-controls__title">Оплата по карте</div>
         </div>
 
-       
-        
-        <div class="switch-controls__title">Оплата по карте</div>
+       <div class="switch-controls-check">
+        <div class="switch-controls__buttons">
+          <label class="switch-controls__elem"> 
+            <input class="switch-controls__radio" type="checkbox" checked>
+            <div class="switch-controls__visible--checkbox"></div>
+          </label>
+        </div>
+        <div class="switch-controls__title">Не перезванивать</div>
+      </div>
 
-      </form>
+      </div>
+
+      <div class="order__row">
+        <div class="order-button">
+          <a href="#" class="btn">заказать</a>
+        </div>
+        <div class="order__clear"><span>Очистить</span></div>
+      </div>
+
+     </form>
     </div>
   </div>
 </section>
