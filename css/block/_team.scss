@@ -1,0 +1,175 @@
+
+.accordeon{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team {
+  background: url("../../image/team/SBS_1255-X2.png") center center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  margin: 0;
+
+  &__content{
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__compasition {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__member {
+    display: flex;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__right {
+    position: absolute;
+    left: 50%;
+    height: 100vh;
+    min-height: 650px;
+    width: 50%;
+    background-color: #2f3234;
+    opacity: 0.93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    color: #f9b43b;
+    font-family: 'Gagalinregular';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 64.04px;
+  }
+
+  &__username{
+    position: relative;
+    color: #ffffff;
+    font-family: 'Gagalinregular';
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    &:hover{
+      color: #f9b43b;
+      transition: 0.3s;
+    }
+  }
+
+  &__profession {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24.01px;
+    font-family: "Ubuntu - Bold";
+    font-weight: 700;
+  }
+
+  &__text {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24.01px;
+    font-family: "Ubuntu Light";
+    width: 50%;
+  }
+}
+
+.team__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &--img {
+    display: block;
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.team__right--col {
+  margin-left: 30px;
+}
+
+.team__username::before {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-right-width: 4.5px;
+  border-left-width: 4.5px;
+  border-top-color: #f9b43b;
+  border-bottom-width: 0;
+  width: 0px;
+  height: 0px;
+  right: 105%;
+  top: 40%;
+}
+
+.team__member--active{
+    display: flex;
+}
+
+.team__content--active{
+  padding: 10px 0px 10px 0px;
+}
+
+.team__content--active .team__username::before {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-right-width: 4.5px;
+  border-left-width: 4.5px;
+  border-bottom-color: #f9b43b;
+  border-top-width: 0;
+  width: 0px;
+  height: 0px;
+  right: 105%;
+  top: 40%;
+}
+
+.team__content--active .team__username{
+  position: relative;
+    color: #f9b43b;
+    font-family: 'Gagalinregular';
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.team__content--active .team__member{
+ overflow: visible;
+ height: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

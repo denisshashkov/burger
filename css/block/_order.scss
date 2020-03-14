@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .order {
   width: 48%;
   display: flex;
@@ -7,7 +11,8 @@
 
 .form-wrap {
   display: flex;
-  padding: 40px 48px 0px 78px;
+  justify-content: space-between;
+  margin-top: 28px;
 }
 
 .order-section {
@@ -17,31 +22,39 @@
 }
 
 .section__title {
+  margin: 0;
   display: flex;
   justify-content: center;
   color: #f9b43b;
   font-family: 'Gagalinregular';
   font-size: 72px;
   font-weight: 400;
-  line-height: 47px;
+  line-height: 63.99px;
+  
 }
 
-.order-left{
-padding-right: 20px;
+.order-left {
+  width: calc(100% / 2 - 0.625rem);
+  padding-left: 80px;
 }
-  .order-right{
-    padding-right: 30px;
-  }
+
+.order-right {
+  width: calc(100% / 2 - 0.625rem);
+}
 
 
 .order__row {
-  margin-bottom: 14px;
+  margin-top: 20px;
   display: flex;
 }
 
 .order__block {
   flex: 1;
-  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.order__block:first-child {
+  margin-left: 0;
 }
 
 .order__block:last-child {
@@ -59,19 +72,31 @@ padding-right: 20px;
 
 .order__input {
   width: 100%;
-  padding: 10px 0px;
-  border: none;
+  padding: 7px 20px;
+  border: 2px solid;
+  border-color: transparent;
   border-radius: 5px;
+  outline: none;
+
+  &:focus {
+    border: 2px solid #f9b43b;
+  }
 }
 
 .order__input--textarea {
-
   width: 455px;
-  height: 104px;
-  border: 1px solid #d1cfcb;
+  height: 113px;
+  border: 2px solid;
+  padding: 10px 20px;
+  outline: none;
+  border-color: transparent;
   border-radius: 5px;
   background-color: #ffffff;
   resize: vertical;
+
+  &:focus {
+    border: 2px solid #f9b43b;
+  }
 }
 
 .switch-controls {
@@ -79,15 +104,14 @@ padding-right: 20px;
   margin-top: 5px;
 }
 
-.switch-controls-check{
+.switch-controls-check {
   display: flex;
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin-top: 27px;
 }
 
 .switch-controls__buttons {
   margin-right: 10px;
-  
+
 }
 
 .switch-controls__title {
@@ -165,6 +189,9 @@ padding-right: 20px;
 }
 
 .order__clear {
+  background: none;
+  outline: none;
+  border: none;
   color: #ffffff;
   font-family: 'Ubuntu';
   font-size: 14px;
@@ -172,4 +199,13 @@ padding-right: 20px;
   line-height: 24px;
   margin-left: 20px;
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+  }
+}
+
+.form__buttons-row{
+  margin-top: 14px;
 }

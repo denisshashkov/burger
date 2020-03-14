@@ -26,16 +26,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  font-family: 'Ubuntu';
+font-size: 14px;
+font-weight: 300;
+}
 
 .container {
   margin: 0 auto;
-  width: 1100px;
+  max-width: 940px;
+  width: 95%;
 }
 
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: 960px;
   min-height: 100%;
   overflow: hidden;
 }
