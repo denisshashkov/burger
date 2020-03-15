@@ -4,10 +4,13 @@
   left: 0;
   right: 0;
   background-color: black;
-  height: 60px;
+  height: 3.75rem;
 
   &__right {
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   &__left {
@@ -17,17 +20,18 @@
   &__address {
     color: #ffffff;
     font-family: 'Ubuntu';
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
-    line-height: 24px;
+    line-height: 1.5rem;
   }
-  &__phone{
+
+  &__phone {
     color: #e45028;
     font-family: "Ubuntu";
     font-weight: 700;
-    font-size: 15px;
+   font-size: 0.9375rem;
     text-decoration: none;
-    line-height: 24px;
+    line-height: 1.5rem;
   }
 }
 
@@ -37,8 +41,28 @@
   padding: 10px 0px;
 }
 
-.phone-number__icon{
-  width: 12px;
-height: 11px;
+.phone-number__icon {
+  width: 0.75rem;
+  height: 0.6875rem;
 }
 
+.socials {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+
+
+  &__link-icon {
+   width: 1.4375rem;
+   height: 1.25rem;
+    margin-left: 1.25rem;
+    opacity: 0.3;
+    fill: #fff;
+    &:hover{
+      transition: 0.3s;
+      opacity: 1;
+      fill: #fff
+    }
+  }
+}

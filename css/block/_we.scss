@@ -2,23 +2,23 @@
   background: url(../../image/we/bg.png) center center/cover no-repeat;
   width: 100%;
   height: 100vh;
-  min-height: 650px;
+  min-height: 40.625rem;
   margin: 0;
 }
 
 .we__best {
   display: flex;
   justify-content: center;
-  padding-top: 74px;
+  padding-top: 4.625rem;
 }
 
 .we__best--title {
   display: flex;
   color: #2f3234;
   font-family: "Gagalinregular";
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: 400;
-  line-height: 64.05px;
+  line-height: 4.0031rem;
 }
 
 .advantage {
@@ -40,23 +40,23 @@
   flex-flow: column;
   align-items: center;
   width: 32%;
-  padding: 0px 15px;
+  padding: 0rem 0.9375rem;
 }
 
 .advantage__icon {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 article {
   color: #2f3234;
   font-family: "Lifehackmedium";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 28.14px;
+  line-height: 1.7588rem;
   letter-spacing: -0.6px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   text-align: center;
 }
 
@@ -64,9 +64,9 @@ article {
   opacity: 0.8;
   color: #2f3234;
   font-family: "Ubuntu";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 24.02px;
+  line-height: 1.5012rem;
   text-align: center;
-  padding: 0px 20px;
+  padding: 0rem 1.25rem;
 }

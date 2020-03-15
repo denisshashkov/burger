@@ -6,19 +6,19 @@
   width: 48%;
   display: flex;
   flex-flow: column;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .form-wrap {
   display: flex;
   justify-content: space-between;
-  margin-top: 28px;
+  margin-top: 1.75rem;
 }
 
 .order-section {
   background: url("../../image/order/2-layers.png") center center / cover no-repeat;
   height: 100vh;
-  min-height: 650px;
+  min-height: 40.625rem;
 }
 
 .section__title {
@@ -27,15 +27,15 @@
   justify-content: center;
   color: #f9b43b;
   font-family: 'Gagalinregular';
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: 400;
-  line-height: 63.99px;
-  
+  line-height: 3.9994rem;
+
 }
 
 .order-left {
   width: calc(100% / 2 - 0.625rem);
-  padding-left: 80px;
+  padding-left: 5rem;
 }
 
 .order-right {
@@ -44,13 +44,13 @@
 
 
 .order__row {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   display: flex;
 }
 
 .order__block {
   flex: 1;
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .order__block:first-child {
@@ -64,7 +64,7 @@
 
 .order__title {
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   margin-bottom: 5px;
   color: #fff;
@@ -72,7 +72,7 @@
 
 .order__input {
   width: 100%;
-  padding: 7px 20px;
+  padding: 0.4375rem 1.25rem;
   border: 2px solid;
   border-color: transparent;
   border-radius: 5px;
@@ -84,10 +84,10 @@
 }
 
 .order__input--textarea {
-  width: 455px;
-  height: 113px;
-  border: 2px solid;
-  padding: 10px 20px;
+  width: 28.4375rem;
+  height: 7.0625rem;
+  border: 0.125rem solid;
+  padding: 0.625rem 1.25rem;
   outline: none;
   border-color: transparent;
   border-radius: 5px;
@@ -106,20 +106,20 @@
 
 .switch-controls-check {
   display: flex;
-  margin-top: 27px;
+  margin-top: 1.6875rem;
 }
 
 .switch-controls__buttons {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 
 }
 
 .switch-controls__title {
   color: #ffffff;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .switch-controls__title:last-child {
@@ -128,7 +128,7 @@
 
 .switch-controls__radio {
   position: absolute;
-  left: -9999px;
+  left: -624.9375rem;
 }
 
 .switch-controls__radio:checked+.switch-controls__visible:after {
@@ -138,8 +138,8 @@
 
 
 .switch-controls__visible {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -147,8 +147,8 @@
   background: #fdfdfd;
 
   &--checkbox {
-    width: 15px;
-    height: 15px;
+    width: 0.9375rem;
+    height: 0.9375rem;
     overflow: hidden;
     position: relative;
     transition: .3s;
@@ -184,8 +184,8 @@
 
 .switch-controls__radio:checked+.switch-controls__visible--checkbox::after {
   background-image: url("../../image/order/w128h1281338911632checkmark2.png");
-  width: 11px;
-  height: 9px;
+  width: 0.6875rem;
+  height: 0.5625rem;
 }
 
 .order__clear {
@@ -194,10 +194,10 @@
   border: none;
   color: #ffffff;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
-  line-height: 24px;
-  margin-left: 20px;
+  line-height: 1.5rem;
+  margin-left: 1.25rem;
   cursor: pointer;
 
   &:hover {
@@ -206,6 +206,25 @@
   }
 }
 
-.form__buttons-row{
-  margin-top: 14px;
+.form__buttons-row {
+  margin-top: 0.875rem;
+}
+
+.btn-submit{
+  width: 97px;
+height: 35px;
+background-color: #e45028;
+color: #ffffff;
+font-family: 'Ubuntu';
+font-size: 13px;
+font-weight: 500;
+line-height: 30px;
+text-transform: uppercase;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+&:hover{
+  background-color: #c1401e;
+  transition: 0.3s;
+}
 }
