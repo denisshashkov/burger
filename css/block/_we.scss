@@ -1,3 +1,5 @@
+
+
 .we {
   background: url(../../image/we/bg.png) center center/cover no-repeat;
   width: 100%;
@@ -13,6 +15,9 @@
 }
 
 .we__best--title {
+  @include phones {
+    font-size: 3.125rem;
+  }
   display: flex;
   color: #2f3234;
   font-family: "Gagalinregular";
@@ -26,7 +31,15 @@
   justify-content: center;
 }
 
+
+
 .advantage__list {
+@include phones {
+flex-direction: column;
+margin: 0;
+padding: 0;
+}
+ 
   list-style: none;
   display: flex;
   align-items: baseline;
@@ -35,7 +48,11 @@
   margin: 0;
 }
 
-.advantage__item {
+.advantage__item{
+ @include phones {
+   flex-direction: row;
+   width: 100%;
+ }
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -49,6 +66,10 @@
 }
 
 article {
+  @include phones {
+    white-space: nowrap;
+    text-align: left;
+  }
   color: #2f3234;
   font-family: "Lifehackmedium";
   font-size: 1.5rem;
@@ -61,6 +82,9 @@ article {
 }
 
 .advantage__text {
+  @include phones {
+    text-align: left;
+  }
   opacity: 0.8;
   color: #2f3234;
   font-family: "Ubuntu";
@@ -70,3 +94,4 @@ article {
   text-align: center;
   padding: 0rem 1.25rem;
 }
+

@@ -1,3 +1,5 @@
+
+
 .reviews {
   background-color: black;
   height: 100vh;
@@ -14,6 +16,10 @@
 }
 
 .reviews__item {
+  @include tablets {
+    width: 50%;
+    height: 25%;
+  }
   height: 50%;
   width: 25%;
   
@@ -50,6 +56,13 @@
 
 
 .review__hover {
+  @include tablets {
+    padding: 0;
+    text-align: center;
+  }
+  @include phones {
+    padding-top: 1.5625rem;
+  }
   position: absolute;
   top: 0;
   left: 0;
@@ -69,6 +82,9 @@
 }
 
 .review__name {
+  @include phones {
+    font-size: 1.5rem;
+  }
   color: #ffffff;
   font-family: 'Gagalinregular';
   font-size: 0.875rem;
@@ -78,6 +94,13 @@
 
 
 .review__text {
+  @include tablets {
+    padding: 0rem 1.25rem;
+    margin: 0;
+  }
+  @include phones {
+    display: none;
+  }
   margin-top: 1.875rem;
   margin-bottom: 1.25rem;
   padding-right: 3.125rem;

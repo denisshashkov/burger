@@ -33,11 +33,25 @@ line-height: 4rem;
   max-height: 100%;
 
   &__item {
+   position: relative;
     display: flex;
     height: 100%;
     
   }
 }
+
+
+@media screen and (max-width: 480px){
+.menu-acco__content--active {
+    position: absolute;
+    right: 1;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 25rem;
+}
+}
+
 .menu-acco__trigger{
   display: block;
   height: 100%;
@@ -56,6 +70,12 @@ line-height: 4rem;
 }
 
 .menu__trigger-text{
+  @include tablets {
+    width: 5rem;
+  }
+  @include phones {
+    font-size: 1.875rem;
+  }
   color: #fff;
 font-family: 'Gagalinregular';
 font-size: 2.5rem;
@@ -72,7 +92,19 @@ transform-origin: 0 0;
 }
 }
 
+.menu__trigger-text--active {
+  @include tablets {
+    
+  }
+  color:#f9b43b ;
+}
+
 .menu-acco__content--active{
+  @include tablets {
+    //display: none;
+    max-width:32rem;
+   
+  }
   height: 100%;
  background-color: #2f3234;
 opacity: 0.93;
