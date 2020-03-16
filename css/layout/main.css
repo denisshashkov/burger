@@ -70,6 +70,7 @@ p {
   padding-top: 4.25rem;
   flex-flow: column;
   justify-content: center;
+  max-width: 100%;
 }
 .slogan__title {
   color: #f9b43b;
@@ -85,7 +86,6 @@ p {
 }
 .slogan__text {
   font-family: "lifehackmedium";
-  width: 25.375rem;
   color: #ffffff;
   font-size: 4.0625rem;
   font-weight: 500;
@@ -93,6 +93,7 @@ p {
 @media screen and (max-width: 768px) {
   .slogan__text {
     margin-top: 0.625rem;
+    width: 99%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -176,6 +177,17 @@ header {
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .header__left {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__left {
+    flex: 1;
+  }
+}
+
 .header__links {
   cursor: pointer;
 }
@@ -338,7 +350,6 @@ header {
     align-items: center;
   }
 }
-
 .order-section {
   background: url("../../image/order/2-layers.png") center center/cover no-repeat;
   height: 100vh;
@@ -354,6 +365,12 @@ header {
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 3.9994rem;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .section__title {
+    font-size: 3.125rem;
+  }
 }
 
 .order-left {
@@ -366,6 +383,12 @@ header {
     padding-left: 0;
   }
 }
+@media screen and (max-width: 480px) {
+  .order-left {
+    width: 100%;
+    padding: 0px 0.9375rem;
+  }
+}
 
 .order-right {
   width: calc(100% / 2 - 0.625rem);
@@ -375,10 +398,21 @@ header {
     width: 29.5rem;
   }
 }
+@media screen and (max-width: 480px) {
+  .order-right {
+    width: 100%;
+    padding: 0px 0.9375rem;
+  }
+}
 
 .order__row {
   margin-top: 1.25rem;
   display: flex;
+}
+@media screen and (max-width: 480px) {
+  .order__row {
+    justify-content: center;
+  }
 }
 
 .order__block {
@@ -392,6 +426,16 @@ header {
 
 .order__block:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .order__block:nth-child(4) {
+    display: none;
+  }
+}
+
+.order__block {
+  max-width: 100%;
 }
 
 .order__title {
@@ -430,6 +474,11 @@ header {
     width: 29.5rem;
   }
 }
+@media screen and (max-width: 480px) {
+  .order__input--textarea {
+    max-width: 100%;
+  }
+}
 .order__input--textarea:focus {
   border: 2px solid #f9b43b;
 }
@@ -438,10 +487,20 @@ header {
   display: flex;
   margin-top: 5px;
 }
+@media screen and (max-width: 480px) {
+  .switch-controls {
+    justify-content: center;
+  }
+}
 
 .switch-controls-check {
   display: flex;
   margin-top: 1.6875rem;
+}
+@media screen and (max-width: 480px) {
+  .switch-controls-check {
+    justify-content: center;
+  }
 }
 
 .switch-controls__buttons {
@@ -542,14 +601,14 @@ header {
 }
 
 .btn-submit {
-  width: 97px;
-  height: 35px;
+  width: 6.0625rem;
+  height: 2.1875rem;
   background-color: #e45028;
   color: #ffffff;
   font-family: "Ubuntu";
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 1.875rem;
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
@@ -687,7 +746,6 @@ header {
   line-height: 1.875rem;
   text-transform: uppercase;
 }
-
 .btn--review:hover {
   background-color: #1f2122;
   cursor: pointer;
@@ -701,6 +759,11 @@ header {
   top: 5rem;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 .nav__list {
@@ -774,6 +837,8 @@ header {
   margin-bottom: 0.625rem;
 }
 .team__compasition {
+  align-items: center;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -815,6 +880,11 @@ header {
   font-weight: 400;
   line-height: 4.0025rem;
 }
+@media screen and (max-width: 480px) {
+  .team__title {
+    font-size: 3.125rem;
+  }
+}
 .team__username {
   position: relative;
   color: #ffffff;
@@ -834,6 +904,11 @@ header {
     line-height: 1.8206rem;
   }
 }
+@media screen and (max-width: 480px) {
+  .team__username {
+    font-size: 1.5625rem;
+  }
+}
 .team__username:hover {
   color: #f9b43b;
   transition: 0.3s;
@@ -851,12 +926,21 @@ header {
   font-weight: 300;
   line-height: 1.5006rem;
   font-family: "Ubuntu Light";
-  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .team__text {
+    width: 73%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team__text {
+    width: 100%;
+  }
 }
 
 .team__avatar {
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 5.25rem;
+  height: 5.25rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -868,8 +952,8 @@ header {
 .team__avatar--img {
   display: block;
   max-width: 100%;
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 5.25rem;
+  height: 5.25rem;
 }
 
 .team__right--col {
@@ -988,6 +1072,7 @@ header {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    max-width: 100%;
   }
 }
 
@@ -1002,6 +1087,7 @@ header {
   .advantage__item {
     flex-direction: row;
     width: 100%;
+    margin-bottom: 3.125rem;
   }
 }
 
@@ -1165,6 +1251,11 @@ article {
   font-weight: 400;
   line-height: 4rem;
 }
+@media screen and (max-width: 480px) {
+  .section-menu__title {
+    font-size: 3.125rem;
+  }
+}
 
 .menu-acco {
   display: flex;
@@ -1173,20 +1264,31 @@ article {
   padding: 0;
   max-height: 100%;
 }
+@media screen and (max-width: 768px) {
+  .menu-acco {
+    max-width: 100%;
+  }
+}
 .menu-acco__item {
   position: relative;
   display: flex;
   height: 100%;
+  width: 80%;
+}
+@media screen and (max-width: 480px) {
+  .menu-acco__item {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 650px) {
+  .menu-acco__item {
+    width: 78%;
+  }
+}
+@media screen and (max-width: 590px) {
   .menu-acco__content--active {
-    position: absolute;
-    right: 1;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 25rem;
+    width: 21%;
   }
 }
 .menu-acco__trigger {
@@ -1246,6 +1348,16 @@ article {
 @media screen and (max-width: 768px) {
   .menu-acco__content--active {
     max-width: 32rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-acco__content--active {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 80vw;
   }
 }
 

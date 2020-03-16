@@ -112,7 +112,14 @@
 }
 
 
+
+
+
 .btn--review {
+  @include phones {
+  
+    
+  }
   width: 6.875rem;
   height: 2.1875rem;
   background-color: #2f3234;

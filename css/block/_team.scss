@@ -17,7 +17,8 @@
   }
 
   &__compasition {
-
+    align-items: center;
+    width: 50%;
     display: flex;
     flex-direction: column;
   }
@@ -53,6 +54,9 @@
   }
 
   &__title {
+    @include phones {
+      font-size: 3.125rem;
+    }
     color: #f9b43b;
     font-family: 'Gagalinregular';
     font-size: 4.5rem;
@@ -65,6 +69,9 @@
       font-size: 1.5625rem;
 font-weight: 400;
 line-height: 1.8206rem;
+    }
+    @include phones{
+      font-size: 1.5625rem;
     }
     position: relative;
     color: #ffffff;
@@ -91,12 +98,18 @@ line-height: 1.8206rem;
   }
 
   &__text {
+    @include tablets {
+      width: 73%;
+    }
+    @include phones{
+      width: 100%;
+    }
     color: #ffffff;
     font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.5006rem;
     font-family: "Ubuntu Light";
-    width: 50%;
+    
   }
 }
 
@@ -104,16 +117,16 @@ line-height: 1.8206rem;
   @include tablets {
     margin-bottom: 1.0625rem;
   }
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 5.25rem;
+  height: 5.25rem;
   border-radius: 50%;
   overflow: hidden;
 
   &--img {
     display: block;
     max-width: 100%;
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 5.25rem;
+    height: 5.25rem;
   }
 }
 

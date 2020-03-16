@@ -1,4 +1,7 @@
 .sidebar {
+  @include tablets {
+    display: none;
+  }
   width: 1.875rem;
   position: fixed;
   right: 3.125rem;

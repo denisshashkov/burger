@@ -14,6 +14,9 @@
     flex-direction: column;
     align-items: center;
   }
+  @include phones {
+   
+  }
   display: flex;
   justify-content: space-between;
   margin-top: 1.75rem;
@@ -26,6 +29,9 @@
 }
 
 .section__title {
+  @include phones {
+    font-size: 3.125rem;
+  }
   margin: 0;
   display: flex;
   justify-content: center;
@@ -34,13 +40,17 @@
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 3.9994rem;
-
+  text-align: center;
 }
 
 .order-left {
   @include tablets {
     width: 29.5rem;
     padding-left: 0;
+  }
+  @include phones {
+    width: 100%;
+    padding: 0px 0.9375rem;
   }
   width: calc(100% / 2 - 0.625rem);
   padding-left: 5rem;
@@ -50,11 +60,18 @@
   @include tablets {
     width: 29.5rem;
   }
+  @include phones {
+    width: 100%;
+    padding: 0px 0.9375rem;
+  }
   width: calc(100% / 2 - 0.625rem);
 }
 
 
 .order__row {
+  @include phones {
+    justify-content: center;
+  }
   margin-top: 1.25rem;
   display: flex;
 }
@@ -72,6 +89,15 @@
   margin-right: 0;
 }
 
+.order__block:nth-child(4){
+  @include phones {
+    display: none;
+  }
+}
+
+.order__block{
+  max-width: 100%;
+}
 
 .order__title {
   font-family: 'Ubuntu';
@@ -98,6 +124,9 @@
   @include tablets {
     width: 29.5rem;
   }
+  @include phones{
+    max-width: 100%;
+  }
   width: 28.4375rem;
   height: 7.0625rem;
   border: 0.125rem solid;
@@ -114,11 +143,17 @@
 }
 
 .switch-controls {
+  @include phones {
+    justify-content: center;
+  }
   display: flex;
   margin-top: 5px;
 }
 
 .switch-controls-check {
+  @include phones {
+    justify-content: center;
+  }
   display: flex;
   margin-top: 1.6875rem;
 }
@@ -225,14 +260,14 @@
 }
 
 .btn-submit{
-  width: 97px;
-height: 35px;
+  width: 6.0625rem;
+height: 2.1875rem;
 background-color: #e45028;
 color: #ffffff;
 font-family: 'Ubuntu';
-font-size: 13px;
+font-size: 0.8125rem;
 font-weight: 500;
-line-height: 30px;
+line-height: 1.875rem;
 text-transform: uppercase;
 border-radius: 5px;
 border: none;

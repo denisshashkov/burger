@@ -31,6 +31,9 @@
   justify-content: center;
 }
 
+.advantage__block{
+  
+}
 
 
 .advantage__list {
@@ -38,6 +41,7 @@
 flex-direction: column;
 margin: 0;
 padding: 0;
+max-width: 100%;
 }
  
   list-style: none;
@@ -52,6 +56,8 @@ padding: 0;
  @include phones {
    flex-direction: row;
    width: 100%;
+   margin-bottom: 3.125rem;
+   
  }
   display: flex;
   flex-flow: column;

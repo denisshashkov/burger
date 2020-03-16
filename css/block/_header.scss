@@ -21,6 +21,16 @@ header {
 }
 }
 
+.header__left {
+	@include tablets {
+		flex: 1;
+	}
+	@include phones {
+		flex: 1;
+	}
+	
+}
+
 .header__links{
   cursor: pointer;
 }
