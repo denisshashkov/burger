@@ -17,6 +17,7 @@ p {
   font-family: "Ubuntu";
   font-size: 0.875rem;
   font-weight: 300;
+  margin: 0;
 }
 
 .container {
@@ -746,10 +747,26 @@ header {
   line-height: 1.875rem;
   text-transform: uppercase;
 }
+
 .btn--review:hover {
   background-color: #1f2122;
   cursor: pointer;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 480px) {
+  .btn-desktop {
+    display: none;
+  }
+}
+
+.btn-phone {
+  opacity: -1;
+}
+@media screen and (max-width: 480px) {
+  .btn-phone {
+    opacity: 1;
+  }
 }
 
 .sidebar {
@@ -1058,6 +1075,11 @@ header {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 480px) {
+  .advantage__block {
+    width: 85%;
+  }
+}
 
 .advantage__list {
   list-style: none;
@@ -1095,6 +1117,11 @@ header {
   display: flex;
   margin-bottom: 1.875rem;
 }
+@media screen and (max-width: 480px) {
+  .advantage__icon {
+    width: 25%;
+  }
+}
 
 article {
   color: #2f3234;
@@ -1123,6 +1150,7 @@ article {
   line-height: 1.5012rem;
   text-align: center;
   padding: 0rem 1.25rem;
+  margin-top: 1.5625rem;
 }
 @media screen and (max-width: 480px) {
   .advantage__text {
@@ -1275,11 +1303,6 @@ article {
   height: 100%;
   width: 80%;
 }
-@media screen and (max-width: 480px) {
-  .menu-acco__item {
-    width: 100%;
-  }
-}
 
 @media screen and (max-width: 650px) {
   .menu-acco__item {
@@ -1300,6 +1323,16 @@ article {
 }
 .menu-acco__trigger-one {
   background: url("../../image/menu/meat.png") center center/cover no-repeat;
+}
+@media screen and (max-width: 480px) {
+  .menu-acco__trigger-one {
+    right: 14.125rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 17vw;
+  }
 }
 .menu-acco__trigger-two {
   background: url("../../image/menu/veg.png") center center/cover no-repeat;
@@ -1327,7 +1360,7 @@ article {
 }
 @media screen and (max-width: 480px) {
   .menu__trigger-text {
-    font-size: 1.875rem;
+    font-size: 2.5rem;
   }
 }
 .menu__trigger-text:hover {
@@ -1338,6 +1371,7 @@ article {
 .menu__trigger-text--active {
   color: #f9b43b;
 }
+
 .menu-acco__content--active {
   height: 100%;
   background-color: #2f3234;
@@ -1353,11 +1387,11 @@ article {
 @media screen and (max-width: 480px) {
   .menu-acco__content--active {
     position: absolute;
-    right: 0;
+    right: -159px;
     top: 0;
     bottom: 0;
     z-index: 2;
-    width: 80vw;
+    width: 81vw;
   }
 }
 
@@ -1373,4 +1407,26 @@ article {
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5rem;
+}
+
+.close-btn {
+  opacity: -1;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .close-btn {
+    opacity: 1;
+  }
+}
+.close-btn:hover {
+  transform: scale(1.2);
+  transition: 0.1s;
 }

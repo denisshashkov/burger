@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -18,21 +18,22 @@
   @include phones {
     font-size: 3.125rem;
   }
+
   position: absolute;
   left: 10%;
   top: 20%;
   color: #ffffff;
-font-family: 'Gagalinregular';
-font-size: 4.5rem;
-font-weight: 400;
-line-height: 4rem;
+  font-family: 'Gagalinregular';
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 4rem;
 }
 
 .menu-acco {
   @include tablets {
     max-width: 100%;
   }
- 
+
   display: flex;
   list-style: none;
   margin: 0;
@@ -40,15 +41,13 @@ line-height: 4rem;
   max-height: 100%;
 
   &__item {
-    @include phones{
-      width: 100%;
-    }
-   position: relative;
+    position: relative;
     display: flex;
     height: 100%;
     width: 80%;
   }
 }
+
 
 
 @media screen and (max-width: 650px) {
@@ -64,85 +63,121 @@ line-height: 4rem;
 }
 
 
-.menu-acco__trigger{
+.menu-acco__trigger {
   display: block;
   height: 100%;
   width: 5rem;
   text-decoration: none;
   position: relative;
-  &-one{
-  background: url('../../image/menu/meat.png')center center/cover no-repeat;
+
+  &-one {
+    background: url('../../image/menu/meat.png')center center/cover no-repeat;
+
+    @include phones {
+      right: 14.125rem;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      width: 17vw;
+    }
   }
-  &-two{
+
+  &-two {
     background: url('../../image/menu/veg.png')center center/cover no-repeat;
   }
-&-three{
-  background: url('../../image/menu/diet.png')center center/cover no-repeat;
-}
+
+  &-three {
+    background: url('../../image/menu/diet.png')center center/cover no-repeat;
+  }
 }
 
-.menu__trigger-text{
+.menu__trigger-text {
   @include tablets {
     width: 5rem;
-    
+
   }
+
   @include phones {
-    font-size: 1.875rem;
+    font-size: 2.5rem;
   }
+
   color: #fff;
-font-family: 'Gagalinregular';
-font-size: 2.5rem;
-font-weight: 400;
-line-height: 3.9844rem;
-position: absolute;
-top: 92%;
-white-space: nowrap;
-transform: rotate(-90deg);
-transform-origin: 0 0;
-&:hover{
-  color: #f9b43b;
-  transition: 0.3s;
-}
+  font-family: 'Gagalinregular';
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3.9844rem;
+  position: absolute;
+  top: 92%;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+
+  &:hover {
+    color: #f9b43b;
+    transition: 0.3s;
+  }
 }
 
 .menu__trigger-text--active {
-  @include tablets {
-    
-  }
-  color:#f9b43b ;
+  color: #f9b43b;
 }
 
-.menu-acco__content--active{
+.menu-acco__content--active {
   @include tablets {
     //display: none;
-    max-width:32rem;
+    max-width: 32rem;
   }
+
   @include phones {
     position: absolute;
-    right: 0;
+    right: -159px;
     top: 0;
     bottom: 0;
     z-index: 2;
-    width: 80vw;
+    width: 81vw;
   }
+
   height: 100%;
- background-color: #2f3234;
-opacity: 0.93;
-width: 33.8125rem;
-padding: 3.75rem;
+  background-color: #2f3234;
+  opacity: 0.93;
+  width: 33.8125rem;
+  padding: 3.75rem;
 }
 
-.menu-acco__content{
+
+
+.menu-acco__content {
   height: 100%;
   overflow: hidden;
- width: 0;
+  width: 0;
 }
 
-.menu-acco__text{
+.menu-acco__text {
   color: #ffffff;
-font-family: 'Ubuntu';
-font-size: 0.875rem;
-font-weight: 300;
-line-height: 1.5rem;
+  font-family: 'Ubuntu';
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5rem;
 }
 
+.close-btn {
+  @include phones {
+    opacity: 1;
+  }
+  opacity: -1;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 1.25rem;
+  right: 1.25rem;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+  }
+}

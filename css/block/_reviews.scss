@@ -109,6 +109,7 @@
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5rem;
+  
 }
 
 
@@ -116,10 +117,7 @@
 
 
 .btn--review {
-  @include phones {
   
-    
-  }
   width: 6.875rem;
   height: 2.1875rem;
   background-color: #2f3234;
@@ -138,3 +136,17 @@
   cursor: pointer;
   transition: 0.3s;
 }
+
+.btn-desktop {
+  @include phones {
+    display: none;
+  }
+}
+
+.btn-phone {
+  @include phones {
+    opacity: 1;
+  }
+ opacity: -1;
+}
+
