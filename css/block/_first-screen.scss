@@ -10,6 +10,12 @@
 }
 
 .slogan {
+  @include iphone6 {
+    padding-top: 0.625rem;
+  }
+  @include samsung {
+    padding-top: 0;
+  }
   display: flex;
   padding-top: 4.25rem;
   flex-flow: column;
@@ -19,11 +25,13 @@
   @include phones {
     font-size: 3.9375rem;
   }
+  @include iphone6 {
+    font-size: 2.5rem;
+  }
   color: #f9b43b;
   font-family: "gagalinregular";
   font-size: 4.5rem;
   font-weight: 400;
-  line-height: 5.3125rem;
 }
 &__text {
   @include tablets {
@@ -34,6 +42,9 @@
   @include phones {
     font-size: 3.375rem;
   }
+  @include iphone6 {
+    font-size: 2.0625rem;
+  }
   font-family: "lifehackmedium";
   color: #ffffff;
   font-size: 4.0625rem;
@@ -42,8 +53,17 @@
 }
 
 .cover__image--pic {
-  width: 31.25rem;
-  height: 15.0625rem;
+  @include iphone6{
+    padding: 5rem;
+  }
+  @include samsung {
+    padding: 5rem;
+  }
+  @include iphone {
+    padding: 5rem;
+  }
+  width: 30.25rem;
+  height: 14.0625rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -54,6 +74,7 @@
 }
 
 .first-screen__content {
+
   display: flex;
   justify-content: center;
   flex: 0.9;
@@ -61,6 +82,14 @@
 }
 
 .cover__image {
+  @include iphone6 {
+    height: 50vh;
+    display: flex;
+  }
+  @include iphone {
+    height: 50vh;
+    display: flex;
+  }
   align-items: center;
 &--pic {
   width: 26.0625rem;
@@ -69,6 +98,7 @@
 }
 
 .scroll {
+  
   display: flex;
   justify-content: center;
 &__down {
@@ -91,5 +121,8 @@
 
   @include tablets {
     margin-top: 1.875rem;
+  }
+  @include samsung {
+    margin-top: 0;
   }
 }

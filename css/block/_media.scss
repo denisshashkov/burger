@@ -15,3 +15,21 @@
     @content;
   }
 }
+
+@mixin iphone{
+  @media screen and (max-width: 320px){
+    @content;
+  }
+}
+
+@mixin iphone6 {
+@media screen and (max-width: 414px){
+  @content;
+}
+}
+
+@mixin samsung {
+  @media screen and (max-width: 360px){
+    @content;
+  }
+}

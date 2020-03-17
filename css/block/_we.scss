@@ -1,6 +1,6 @@
 
 
-.we {
+.section-we {
   background: url(../../image/we/bg.png) center center/cover no-repeat;
   width: 100%;
   height: 100vh;
@@ -9,27 +9,58 @@
 }
 
 .we__best {
+  @include iphone6 {
+    margin-bottom: 0.9375rem;
+  }
+  @include samsung {
+    margin-bottom: 0.9375rem;
+  }
+  @include iphone {
+    margin-bottom: 0.9375rem;
+  }
   display: flex;
   justify-content: center;
-  padding-top: 4.625rem;
 }
 
 .we__best--title {
+ 
   @include phones {
     font-size: 3.125rem;
+  }
+  @include samsung {
+    font-size: 2.125rem;
+  }
+  @include iphone {
+    font-size: 2.125rem;
   }
   display: flex;
   color: #2f3234;
   font-family: "Gagalinregular";
   font-size: 4.5rem;
   font-weight: 400;
-  line-height: 4.0031rem;
+
+  margin: 0;
 }
 
 .advantage {
+  @include iphone6 {
+    height: 90vh;
+  }
+  @include samsung {
+    height: 90vh;
+  }
+  @include iphone {
+    height: 100vh;
+  }
   display: flex;
   justify-content: center;
   &__block{
+    @include samsung {
+      width: 50%;
+    }
+    @include iphone {
+      width: 50%;
+    }
     @include phones {
       width: 85%;
     }
@@ -40,6 +71,7 @@
 
 
 .advantage__list {
+ 
 @include phones {
 flex-direction: column;
 margin: 0;
@@ -56,11 +88,16 @@ max-width: 100%;
 }
 
 .advantage__item{
+  @include iphone {
+    padding: 0;
+  }
  @include phones {
    flex-direction: row;
    width: 100%;
    margin-bottom: 3.125rem;
-   
+ }
+ @include samsung {
+   margin: 0;
  }
   display: flex;
   flex-flow: column;
@@ -78,9 +115,13 @@ max-width: 100%;
 }
 
 article {
+  
   @include phones {
-    white-space: nowrap;
+    
     text-align: left;
+  }
+  @include iphone {
+    white-space: wrap;
   }
   color: #2f3234;
   font-family: "Lifehackmedium";
@@ -94,6 +135,12 @@ article {
 }
 
 .advantage__text {
+  @include iphone6 {
+    margin-top: 10px;
+  }
+  @include iphone{
+    margin: 0;
+  }
   @include phones {
     text-align: left;
   }
@@ -108,3 +155,17 @@ article {
   margin-top: 1.5625rem;
 }
 
+.advantage__icon--pic {
+  @include iphone6 {
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+  @include samsung {
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+  @include iphone {
+    width: 3.75rem;
+    height: 3.75rem;  
+  }
+}
