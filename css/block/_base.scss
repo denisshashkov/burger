@@ -47,6 +47,9 @@ margin: 0;
 }
 
 .section {
+  @include iphone {
+    min-height: 35.5625rem;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;

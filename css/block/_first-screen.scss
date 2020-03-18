@@ -16,6 +16,9 @@
   @include samsung {
     padding-top: 0;
   }
+  @include iphone {
+    margin-bottom: 1.25rem;
+  }
   display: flex;
   padding-top: 4.25rem;
   flex-flow: column;
@@ -59,9 +62,6 @@
   @include samsung {
     padding: 5rem;
   }
-  @include iphone {
-    padding: 5rem;
-  }
   width: 30.25rem;
   height: 14.0625rem;
 }
@@ -86,10 +86,7 @@
     height: 50vh;
     display: flex;
   }
-  @include iphone {
-    height: 50vh;
-    display: flex;
-  }
+ 
   align-items: center;
 &--pic {
   width: 26.0625rem;

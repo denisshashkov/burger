@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 .order {
   width: 48%;
   display: flex;
@@ -21,10 +22,17 @@
   justify-content: space-between;
 }
 
+.form__buttons-row {
+  margin-bottom: 1.25rem;
+}
 .order-section {
+  @include iphone {
+    min-height: 35.5625rem;
+  }
   background: url("../../image/order/2-layers.png") center center / cover no-repeat;
   height: 100vh;
   min-height: 40.625rem;
+
 }
 
 .section__title {
@@ -59,7 +67,7 @@
     padding: 0px 0.9375rem;
   }
   width: calc(100% / 2 - 0.625rem);
-  padding-left: 5rem;
+  
 }
 
 .order-right {
@@ -78,8 +86,14 @@
   @include phones {
     justify-content: center;
   }
-  margin-top: 1.25rem;
+  @include iphone {
+    margin-bottom: 0.625rem;
+  }
   display: flex;
+  margin-bottom: 1.25rem;
+  &:nth-child(3){
+    margin-bottom: 0;
+  }
 }
 
 .order__block {
@@ -153,7 +167,7 @@
     justify-content: center;
   }
   display: flex;
-  margin-top: 5px;
+  margin-bottom: 1.25rem;
 }
 
 .switch-controls-check {
@@ -161,7 +175,7 @@
     justify-content: center;
   }
   display: flex;
-  margin-top: 1.6875rem;
+  
 }
 
 .switch-controls__buttons {
@@ -261,9 +275,7 @@
   }
 }
 
-.form__buttons-row {
-  margin-top: 0.875rem;
-}
+
 
 .btn-submit{
   width: 6.0625rem;

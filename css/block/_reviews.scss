@@ -1,6 +1,9 @@
 
 
 .reviews {
+  @include iphone {
+    min-height: 35.5625rem;
+  }
   background-color: black;
   height: 100vh;
   min-height: 40.625rem;
@@ -82,6 +85,9 @@
 .review__name {
   @include phones {
     font-size: 1.5rem;
+  }
+  @include iphone {
+    font-size: 0.875rem;
   }
   color: #ffffff;
   font-family: 'Gagalinregular';

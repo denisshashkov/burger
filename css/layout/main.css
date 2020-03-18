@@ -42,6 +42,11 @@ p {
   min-height: 40.625rem;
   background-color: black;
 }
+@media screen and (max-width: 320px) {
+  .section {
+    min-height: 35.5625rem;
+  }
+}
 
 @font-face {
   font-family: "lifehackmedium";
@@ -81,6 +86,11 @@ p {
 @media screen and (max-width: 360px) {
   .slogan {
     padding-top: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .slogan {
+    margin-bottom: 1.25rem;
   }
 }
 .slogan__title {
@@ -136,11 +146,6 @@ p {
     padding: 5rem;
   }
 }
-@media screen and (max-width: 320px) {
-  .cover__image--pic {
-    padding: 5rem;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .first-screen__content {
@@ -159,12 +164,6 @@ p {
   align-items: center;
 }
 @media screen and (max-width: 414px) {
-  .cover__image {
-    height: 50vh;
-    display: flex;
-  }
-}
-@media screen and (max-width: 320px) {
   .cover__image {
     height: 50vh;
     display: flex;
@@ -401,10 +400,19 @@ header {
     align-items: center;
   }
 }
+.form__buttons-row {
+  margin-bottom: 1.25rem;
+}
+
 .order-section {
   background: url("../../image/order/2-layers.png") center center/cover no-repeat;
   height: 100vh;
   min-height: 40.625rem;
+}
+@media screen and (max-width: 320px) {
+  .order-section {
+    min-height: 35.5625rem;
+  }
 }
 
 .section__title {
@@ -437,7 +445,6 @@ header {
 
 .order-left {
   width: calc(100% / 2 - 0.625rem);
-  padding-left: 5rem;
 }
 @media screen and (max-width: 768px) {
   .order-left {
@@ -468,13 +475,21 @@ header {
 }
 
 .order__row {
-  margin-top: 1.25rem;
   display: flex;
+  margin-bottom: 1.25rem;
 }
 @media screen and (max-width: 480px) {
   .order__row {
     justify-content: center;
   }
+}
+@media screen and (max-width: 320px) {
+  .order__row {
+    margin-bottom: 0.625rem;
+  }
+}
+.order__row:nth-child(3) {
+  margin-bottom: 0;
 }
 
 .order__block {
@@ -547,7 +562,7 @@ header {
 
 .switch-controls {
   display: flex;
-  margin-top: 5px;
+  margin-bottom: 1.25rem;
 }
 @media screen and (max-width: 480px) {
   .switch-controls {
@@ -557,7 +572,6 @@ header {
 
 .switch-controls-check {
   display: flex;
-  margin-top: 1.6875rem;
 }
 @media screen and (max-width: 480px) {
   .switch-controls-check {
@@ -658,10 +672,6 @@ header {
   transition: 0.1s;
 }
 
-.form__buttons-row {
-  margin-top: 0.875rem;
-}
-
 .btn-submit {
   width: 6.0625rem;
   height: 2.1875rem;
@@ -685,6 +695,11 @@ header {
   background-color: black;
   height: 100vh;
   min-height: 40.625rem;
+}
+@media screen and (max-width: 320px) {
+  .reviews {
+    min-height: 35.5625rem;
+  }
 }
 
 .reviews__list {
@@ -765,6 +780,11 @@ header {
 @media screen and (max-width: 480px) {
   .review__name {
     font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .review__name {
+    font-size: 0.875rem;
   }
 }
 
@@ -905,6 +925,11 @@ header {
   min-height: 40.625rem;
   margin: 0;
 }
+@media screen and (max-width: 320px) {
+  .team {
+    min-height: 569px;
+  }
+}
 .team__content {
   position: relative;
   margin-bottom: 0.625rem;
@@ -914,6 +939,11 @@ header {
   width: 50%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 320px) {
+  .team__compasition {
+    height: inherit;
+  }
 }
 .team__member {
   display: flex;
@@ -946,6 +976,11 @@ header {
     text-align: center;
   }
 }
+@media screen and (max-width: 320px) {
+  .team__right {
+    min-height: 35.5625rem;
+  }
+}
 .team__title {
   color: #f9b43b;
   font-family: "Gagalinregular";
@@ -956,6 +991,12 @@ header {
 @media screen and (max-width: 480px) {
   .team__title {
     font-size: 3.125rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .team__title {
+    margin: 0;
+    font-size: 2.625rem;
   }
 }
 .team__username {
@@ -980,6 +1021,11 @@ header {
 @media screen and (max-width: 480px) {
   .team__username {
     font-size: 1.5625rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .team__username {
+    margin-bottom: 0;
   }
 }
 .team__username:hover {
@@ -1106,6 +1152,11 @@ header {
   min-height: 40.625rem;
   margin: 0;
 }
+@media screen and (max-width: 320px) {
+  .section-we {
+    min-height: 35.5625rem;
+  }
+}
 
 .we__best {
   display: flex;
@@ -1117,11 +1168,6 @@ header {
   }
 }
 @media screen and (max-width: 360px) {
-  .we__best {
-    margin-bottom: 0.9375rem;
-  }
-}
-@media screen and (max-width: 320px) {
   .we__best {
     margin-bottom: 0.9375rem;
   }
@@ -1165,11 +1211,6 @@ header {
     height: 90vh;
   }
 }
-@media screen and (max-width: 320px) {
-  .advantage {
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 360px) {
   .advantage__block {
     width: 50%;
@@ -1177,7 +1218,7 @@ header {
 }
 @media screen and (max-width: 320px) {
   .advantage__block {
-    width: 50%;
+    margin-bottom: 1.5625rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1257,6 +1298,7 @@ article {
 @media screen and (max-width: 320px) {
   article {
     white-space: wrap;
+    padding: 0;
   }
 }
 
@@ -1273,12 +1315,12 @@ article {
 }
 @media screen and (max-width: 414px) {
   .advantage__text {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 @media screen and (max-width: 320px) {
   .advantage__text {
-    margin: 0;
+    padding: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1312,6 +1354,11 @@ article {
   height: 100vh;
   min-height: 40.625rem;
   margin: 0;
+}
+@media screen and (max-width: 320px) {
+  .section-map {
+    min-height: 35.5625rem;
+  }
 }
 
 .footer {
@@ -1416,6 +1463,11 @@ article {
   display: flex;
   justify-content: flex-end;
 }
+@media screen and (max-width: 320px) {
+  .menu-choice {
+    min-height: 35.5625rem;
+  }
+}
 
 .section-menu__title {
   position: absolute;
@@ -1482,6 +1534,12 @@ article {
     width: 17vw;
   }
 }
+@media screen and (max-width: 320px) {
+  .menu-acco__trigger-one {
+    width: 3.5625rem;
+    left: -10rem;
+  }
+}
 .menu-acco__trigger-two {
   background: url("../../image/menu/veg.png") center center/cover no-repeat;
 }
@@ -1511,6 +1569,11 @@ article {
     font-size: 2.5rem;
   }
 }
+@media screen and (max-width: 320px) {
+  .menu__trigger-text {
+    padding-left: 3.125rem;
+  }
+}
 .menu__trigger-text:hover {
   color: #f9b43b;
   transition: 0.3s;
@@ -1535,11 +1598,17 @@ article {
 @media screen and (max-width: 480px) {
   .menu-acco__content--active {
     position: absolute;
-    right: -159px;
+    right: -9.9375rem;
     top: 0;
     bottom: 0;
     z-index: 2;
     width: 81vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .menu-acco__content--active {
+    padding: 2.9375rem 0.625rem;
+    width: 82vw;
   }
 }
 

@@ -1,4 +1,7 @@
 .section-map{
+  @include iphone{
+    min-height: 35.5625rem;
+  }
   background: url(../../image/map/map.jpg) center center/cover no-repeat;
   width: 100%;
   height: 100vh;

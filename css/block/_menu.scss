@@ -3,6 +3,9 @@
 }
 
 .menu-choice {
+ @include iphone {
+   min-height: 35.5625rem;
+ }
   background: url('../../image/menu/photo-1428660386617-8d277e7deaf2.png') center center/cover no-repeat;
   overflow: hidden;
   position: relative;
@@ -64,6 +67,7 @@
 
 
 .menu-acco__trigger {
+  
   display: block;
   height: 100%;
   width: 5rem;
@@ -72,7 +76,6 @@
 
   &-one {
     background: url('../../image/menu/meat.png')center center/cover no-repeat;
-
     @include phones {
       right: 14.125rem;
       position: absolute;
@@ -81,6 +84,10 @@
       z-index: 3;
       width: 17vw;
     }
+    @include iphone {
+      width: 3.5625rem;
+    left: -10rem;
+} 
   }
 
   &-two {
@@ -95,13 +102,13 @@
 .menu__trigger-text {
   @include tablets {
     width: 5rem;
-
   }
-
   @include phones {
     font-size: 2.5rem;
   }
-
+  @include iphone {
+    padding-left: 3.125rem;
+  }
   color: #fff;
   font-family: 'Gagalinregular';
   font-size: 2.5rem;
@@ -131,13 +138,16 @@
 
   @include phones {
     position: absolute;
-    right: -159px;
+    right: -9.9375rem;
     top: 0;
     bottom: 0;
     z-index: 2;
     width: 81vw;
   }
-
+@include iphone {
+  padding: 2.9375rem 0.625rem;
+  width: 82vw;
+}
   height: 100%;
   background-color: #2f3234;
   opacity: 0.93;
