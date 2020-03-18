@@ -1,0 +1,84 @@
+.footer {
+  @include phones {
+    height: 7.25rem;
+  }
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  height: 3.75rem;
+
+  &__right {
+    @include phones {
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.9375rem;
+    }
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__left {
+    @include phones {
+      text-align: center;
+      width: 100%;
+    }
+    width: 50%;
+  }
+
+  &__address {
+    color: #ffffff;
+    font-family: 'Ubuntu';
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
+
+  &__phone {
+    color: #e45028;
+    font-family: "Ubuntu";
+    font-weight: 700;
+   font-size: 0.9375rem;
+    text-decoration: none;
+    line-height: 1.5rem;
+  }
+}
+
+.footer .container {
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.phone-number__icon {
+  width: 0.75rem;
+  height: 0.6875rem;
+}
+
+.socials {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+
+
+  &__link-icon {
+   width: 1.4375rem;
+   height: 1.25rem;
+    margin-left: 1.25rem;
+    opacity: 0.3;
+    fill: #fff;
+    &:hover{
+      transition: 0.3s;
+      opacity: 1;
+      fill: #fff
+    }
+  }
+}
