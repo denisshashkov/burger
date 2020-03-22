@@ -2,7 +2,7 @@
 
 .reviews {
   @include iphone {
-    min-height: 35.5625rem;
+    min-height: 0;
   }
   background-color: black;
   height: 100vh;

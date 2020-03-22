@@ -6,7 +6,7 @@
 
 .team {
   @include iphone {
-    min-height: 569px;
+    min-height: 0;
   }
   background: url("../../image/team/SBS_1255-X2.png") center center/cover no-repeat;
   width: 100%;
@@ -20,9 +20,6 @@
   }
 
   &__compasition {
-    @include iphone {
-      height: inherit;
-    }
     align-items: center;
     width: 50%;
     display: flex;
@@ -47,7 +44,7 @@
       text-align: center;
     }
     @include iphone {
-      min-height: 35.5625rem;
+      min-height: 0;
     }
     position: absolute;
     left: 50%;
