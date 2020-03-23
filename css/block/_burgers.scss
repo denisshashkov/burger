@@ -49,11 +49,25 @@
 }
 
 
+.burger__list {
+  list-style: none;
+  padding: 0;
+}
+
+.burger__item {
+  display: flex;
+  @include tablets {
+  flex-direction: column;
+  }
+}
+
 .burger__image-wrap {
   @include tablets {
     padding-top: 5.625rem;
   }
 }
+
+
 
 .burger__image-pic {
   @include middle {
@@ -67,9 +81,11 @@
   }
 
   @include samsung {
-    width: 15.625rem;
-    height: 9.375rem;
+    width: 13.625rem;
+    height: 8.375rem;
   }
+  width: 505px;
+height: 329px;
 }
 
 .burger {
