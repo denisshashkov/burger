@@ -27,7 +27,7 @@ close.addEventListener('click',function(){
 
 //////////////Слайдер/////////////////////////////
 
-const left = document.querySelector('.scroll-left');
+/*const left = document.querySelector('.scroll-left');
 const right = document.querySelector('.scroll-right');
 const items = document.querySelector('.burger__list');
 
@@ -46,7 +46,7 @@ function loop(direction,e) {
   } else {
     items.insertBefore(items.lastElementChild, items.firstElementChild);
   }
-}
+}*/
 
 
 //////////////Состав бургера/////////////////////
@@ -76,19 +76,6 @@ burgerbutton.addEventListener('mouseout',  e=> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////меню аккордеон/////////////////////////
 
 const menu = document.querySelector('.menu-choice'),
@@ -96,8 +83,8 @@ const menu = document.querySelector('.menu-choice'),
      accoitemlength = accoitem.length;
 
 menu.addEventListener('click', e => {
-for (let i = 0; i<accoItemlength; i++) {
-  accoitem [i].classlist.remove('menu-acco__item--active'); 
+for (let i = 0; i<accoitemlength; i++) {
+  accoitem[i].classlist.remove('menu-acco__item--active'); 
 }
 })
 
