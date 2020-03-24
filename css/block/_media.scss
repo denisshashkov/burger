@@ -33,3 +33,9 @@
     @content;
   }
 }
+
+@mixin middle {
+  @media screen and (max-width: 580px){
+    @content;
+  }
+}

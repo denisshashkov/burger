@@ -27,7 +27,7 @@
 }
 .order-section {
   @include iphone {
-    min-height: 35.5625rem;
+    min-height: 0;
   }
   background: url("../../image/order/2-layers.png") center center / cover no-repeat;
   height: 100vh;
