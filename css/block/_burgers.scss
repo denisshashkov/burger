@@ -13,7 +13,6 @@
 .burgers-container {
   display: flex;
   margin: 0 auto;
-
 }
 
 .scroll {
@@ -57,11 +56,16 @@
   list-style: none;
   padding: 0;
   display: flex;
-  overflow: hidden;
-}
+  margin: 0;
+  }
+
+
 
 .burger__item {
-  display: flex;
+  &:first-child {
+    display: flex;
+  }
+  display: none;
   width: 100%;
   flex-shrink: 0;
   @include tablets {
