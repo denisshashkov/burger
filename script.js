@@ -25,6 +25,30 @@ close.addEventListener('click',function(){
 })
 
 
+//////////////Слайдер/////////////////////////////
+
+const left = document.querySelector('.scroll-left');
+const right = document.querySelector('.scroll-right');
+const items = document.querySelector('.burger__list');
+
+left.addEventListener('click', function(e) {
+  loop('left',e);
+});
+
+right.addEventListener('click', function(e) {
+  loop('right',e);
+});
+
+function loop(direction,e) {
+  e.preventDefault();
+  if (direction==='right') {
+    items.appendChild(items.firstElementChild);
+  } else {
+    items.insertBefore(items.lastElementChild, items.firstElementChild);
+  }
+}
+
+
 //////////////Состав бургера/////////////////////
 
 const compasition = document.querySelector('.burger-compasition');
@@ -40,25 +64,42 @@ burgerbutton.addEventListener('click',  e=> {
 })
 
 burgerbutton.addEventListener('mouseover',  e=> {
-  if (compasition.style.display == 'none') compasition.style.display = 'block';
+  if(compasition.style.display == 'none') compasition.style.display = 'block';
 })
 
-burgerbutton.addEventListener ('mouseout',  e=> {
-  if (compasition.style.display == 'block') compasition.style.display = 'none';
+burgerbutton.addEventListener('mouseout',  e=> {
+  if(compasition.style.display == 'block') compasition.style.display = 'none';
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////////////меню аккордеон/////////////////////////
 
-const menu = document.querySelector('.menu-choice');
-const accoitem = document.querySelectorAll('.menu-acco__item');
-const accoitemlength = accoitem.length;
+const menu = document.querySelector('.menu-choice'),
+     accoitem = document.querySelectorAll('.menu-acco__item'),
+     accoitemlength = accoitem.length;
 
 menu.addEventListener('click', e => {
 for (let i = 0; i<accoItemlength; i++) {
-  accoitem[i].classlist.remove('menu-acco__item--active'); 
+  accoitem [i].classlist.remove('menu-acco__item--active'); 
 }
-});
+})
 
 for (let i = 0; i<accoitemlength; i++) {
   accoitem[i].addEventListener('click', e => {

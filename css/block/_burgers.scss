@@ -48,14 +48,22 @@
   }
 }
 
+.burger__order {
+  display: flex;
+  align-items: baseline;
+}
 
 .burger__list {
   list-style: none;
   padding: 0;
+  display: flex;
+  overflow: hidden;
 }
 
 .burger__item {
   display: flex;
+  width: 100%;
+  flex-shrink: 0;
   @include tablets {
   flex-direction: column;
   }
