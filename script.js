@@ -25,9 +25,9 @@ close.addEventListener('click',function(){
 })
 
 
-//////////////Слайдер/////////////////////////////
+//////////////Слайдер бургер/////////////////////////////
 
-/*const left = document.querySelector('.scroll-left');
+const left = document.querySelector('.scroll-left');
 const right = document.querySelector('.scroll-right');
 const items = document.querySelector('.burger__list');
 
@@ -46,7 +46,8 @@ function loop(direction,e) {
   } else {
     items.insertBefore(items.lastElementChild, items.firstElementChild);
   }
-}*/
+}
+
 
 
 //////////////Состав бургера/////////////////////
@@ -54,7 +55,6 @@ function loop(direction,e) {
 const compasition = document.querySelector('.burger-compasition');
 const burgerbutton = document.querySelector('.burger__image-icon');
 const closecompasition = document.querySelector('.close-compasition');
-
 
 compasition.style.display = 'none';
 
@@ -84,7 +84,7 @@ const menu = document.querySelector('.menu-choice'),
 
 menu.addEventListener('click', e => {
 for (let i = 0; i<accoitemlength; i++) {
-  accoitem[i].classlist.remove('menu-acco__item--active'); 
+  accoitem[i].classList.remove('menu-acco__item--active'); 
 }
 })
 
@@ -94,18 +94,44 @@ for (let i = 0; i<accoitemlength; i++) {
     e.stopPropagation();
 
     if (accoitem[i].classList.contains('menu-acco__item--active')){
-      accoitem[i].classlist.remove('menu-acco__item--active'); 
+      accoitem[i].classList.remove('menu-acco__item--active'); 
     }
     else {
       for (let i = 0; i<accoitemlength; i++) {
-        accoitem[i].classlist.remove('menu-acco__item--active'); 
+        accoitem[i].classList.remove('menu-acco__item--active'); 
       }
-      accoitem[i].classlist.add('menu-acco__item--active'); 
+      accoitem[i].classList.add('menu-acco__item--active'); 
     }
   })
 }
 
 
-/////////////////////команда//////////////////////////////
+/////////////////////команда аккордеон//////////////////////////////
 
 
+const team = document.querySelector('.team__right'),
+     teamitem = document.querySelectorAll('.team__content'),
+     teamitemLength = teamitem.length;
+
+team.addEventListener('click', e => {
+for (let i = 0; i<teamitemLength; i++) {
+  teamitem[i].classList.remove('team__content--active'); 
+}
+})
+
+for (let i = 0; i<teamitemLength; i++) {
+  teamitem[i].addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (teamitem[i].classList.contains('team__content--active')){
+      teamitem[i].classList.remove('team__content--active'); 
+    }
+    else {
+      for (let i = 0; i<teamitemLength; i++) {
+        teamitem[i].classList.remove('team__content--active'); 
+      }
+      teamitem[i].classList.add('team__content--active'); 
+    }
+  })
+}
