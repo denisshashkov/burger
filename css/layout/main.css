@@ -836,6 +836,7 @@ header {
   height: 2.1875rem;
   background-color: #2f3234;
   border: none;
+  outline: none;
   color: #fff;
   border-radius: 0.3125rem;
   font-family: "Ubuntu";
@@ -954,6 +955,9 @@ header {
 .team__content {
   position: relative;
   margin-bottom: 0.625rem;
+}
+.team__content:last-child {
+  margin-bottom: 0;
 }
 .team__compasition {
   align-items: center;
@@ -1678,19 +1682,28 @@ article {
 }
 
 .burger__list {
+  width: 100%;
   list-style: none;
   padding: 0;
   display: flex;
   margin: 0;
+  will-change: right;
+  transition: right 0.6s;
+}
+@media screen and (max-width: 414px) {
+  .burger__list {
+    width: 85%;
+  }
 }
 
 .burger__item {
-  display: none;
-  width: 100%;
+  display: flex;
   flex-shrink: 0;
+  opacity: 0;
+  width: 100%;
 }
 .burger__item:first-child {
-  display: flex;
+  opacity: 1;
 }
 @media screen and (max-width: 768px) {
   .burger__item {
@@ -1931,9 +1944,9 @@ article {
 .burger-compasition {
   position: absolute;
   background-color: #ffffff;
-  opacity: 0.9;
   border-radius: 5px;
   left: 5.625rem;
+  opacity: 0;
 }
 @media screen and (max-width: 768px) {
   .burger-compasition {
@@ -2026,6 +2039,8 @@ article {
   font-family: "Ubuntu";
   font-size: 0.875rem;
   font-weight: 300;
+  flex: 1;
+  text-align: right;
 }
 
 .close-compasition {

@@ -48,6 +48,49 @@ function loop(direction,e) {
   }
 }
 
+function loop(direction,e) {
+  e.preventDefault();
+  if (direction==='left') {
+    items.appendChild(items.firstElementChild);
+  } else {
+    items.insertBefore(items.lastElementChild, items.firstElementChild);
+  }
+}
+
+//////////////////второй вариант//////////////////
+
+
+/*const left = document.querySelector(".scroll-left");
+const right = document.querySelector(".scroll-right");
+const items = document.querySelector(".burger__list");
+
+const minRight = 0;
+const maxRight = 100;
+const step = 100;
+let currentRight = 0;
+
+items.style.right = currentRight;
+
+right.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (currentRight < maxRight) {
+    currentRight += step;
+    items.style.right = currentRight + "px";
+  }
+});
+
+left.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (currentRight > minRight) {
+    currentRight -= step;
+    items.style.right = currentRight + "px";
+  }
+});*/
+
+
+
+
+
 
 
 //////////////Состав бургера/////////////////////
@@ -56,21 +99,15 @@ const compasition = document.querySelector('.burger-compasition');
 const burgerbutton = document.querySelector('.burger__image-icon');
 const closecompasition = document.querySelector('.close-compasition');
 
-compasition.style.display = 'none';
-
-burgerbutton.addEventListener('click',  e=> {
-  if(compasition.style.display == 'none') compasition.style.display = 'block';
-  else compasition.style.display = 'none'
-})
-
 burgerbutton.addEventListener('mouseover',  e=> {
-  if(compasition.style.display == 'none') compasition.style.display = 'block';
+  if(compasition.style.opacity == 0) {compasition.style.opacity = 0.9;
+}
 })
 
 burgerbutton.addEventListener('mouseout',  e=> {
-  if(compasition.style.display == 'block') compasition.style.display = 'none';
+  if(compasition.style.opacity == 0.9) {compasition.style.opacity = 0;
+}
 })
-
 
 
 

@@ -52,23 +52,30 @@
   align-items: baseline;
 }
 
+
+
 .burger__list {
+@include iphone6 {
+  width: 85%;
+}
+  width: 100%;
   list-style: none;
   padding: 0;
   display: flex;
   margin: 0;
+  will-change: right;
+  transition: right 0.6s;
+  
 }
 
-
-
 .burger__item {
- &:first-child {
-   display: flex;
- }
-  display: none;
-  width: 100%;
+  &:first-child {
+    opacity: 1;
+  }
+  display: flex;
   flex-shrink: 0;
-
+  opacity:0;
+  width: 100%;
 
   @include tablets {
     flex-direction: column;
@@ -240,7 +247,6 @@
   align-items: center;
   justify-content: space-evenly;
   opacity: 0.5;
-
   &:hover {
     opacity: 1;
     transition: 0.3s;
@@ -316,12 +322,12 @@
     left: 5rem;
     width: 11.25rem;
   }
-
+  
   position: absolute;
   background-color: #ffffff;
-  opacity: 0.9;
   border-radius: 5px;
   left: 5.625rem;
+  opacity: 0;
 
   &__list {
   
@@ -387,6 +393,8 @@
   font-family: 'Ubuntu';
   font-size: 0.875rem;
   font-weight: 300;
+  flex: 1;
+  text-align: right;
 }
 
 .close-compasition {
@@ -420,3 +428,6 @@
     transition: 0.1s;
   }
 }
+
+
+
