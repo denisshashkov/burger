@@ -54,39 +54,13 @@
 
 
 
-.burger__list {
-@include iphone6 {
-  width: 85%;
-}
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  margin: 0;
-  will-change: right;
-  transition: right 0.6s;
-  
-}
-
-.burger__item {
-  &:first-child {
-    opacity: 1;
-  }
-  display: flex;
-  flex-shrink: 0;
-  opacity:0;
-  width: 100%;
-
-  @include tablets {
-    flex-direction: column;
-  }
-}
 
 .burger__image-wrap {
   @include tablets {
     padding-top: 5.625rem;
   }
 }
+
 
 
 
@@ -220,43 +194,7 @@
   font-weight: 400;
 }
 
-.burger__image-icon {
-  @include tablets {
-    position: absolute;
-    left: 5rem;
-  }
 
-  @include samsung {
-    width: 4.375rem;
-    height: 4.375rem;
-  }
-
-  @include phones {
-    left: 0.625rem;
-  }
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: 5.625rem;
-  height: 5.625rem;
-  background-color: #e35028;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  opacity: 0.5;
-  &:hover {
-    opacity: 1;
-    transition: 0.3s;
-  }
-
-  &-pic {
-    width: 2.875rem;
-    height: 2.75rem;
-  }
-}
 
 .burger__image-kkal {
   @include tablets {
@@ -304,73 +242,7 @@
   position: relative;
 }
 
-.burger-compasition {
-  @include tablets {
-    left: 10.5625rem;
-    width: 18.75rem;
-  }
 
-  @include phones {
-    left: 6.25rem;
-  }
-
-  @include iphone6 {
-    width: 12.5rem;
-  }
-
-  @include samsung {
-    left: 5rem;
-    width: 11.25rem;
-  }
-  
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 5px;
-  left: 5.625rem;
-  opacity: 0;
-
-  &__list {
-  
-    list-style: none;
-    margin: 0;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-  }
-
-  &__item {
-    @include tablets {
-      justify-content: space-evenly;
-    }
-    @include iphone6 {
-      justify-content: flex-start;
-    }
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__item-icon {
-    @include phones {
-      margin: 0;
-    }
-    @include iphone6 {
-      width: 1.875rem;
-      height: 1.875rem;
-      margin-right: 0.625rem;
-    }
-    width: 3rem;
-    height: 2.6875rem;
-    margin-right: 1.25rem;
-  }
-}
 
 .burger-compasition__item-title {
   @include tablets {
@@ -429,5 +301,171 @@
   }
 }
 
+
+.burger__image-icon-wrapp {
+  position:relative;
+  display: inline-flex;
+}
+
+
+
+.burger__image-icon {
+  @include tablets {
+    position: absolute;
+    left: 5rem;
+  }
+
+  @include samsung {
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+
+  @include phones {
+    left: -10px;
+  }
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 5.625rem;
+  height: 5.625rem;
+  background-color: #e35028;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  &-pic {
+    width: 2.875rem;
+    height: 2.75rem;
+  }
+}
+
+
+.burger-compasition {
+
+  
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 5px;
+  right: 999990px;
+  width: 0;
+  
+  &__list {
+  
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  &__item {
+    @include tablets {
+      justify-content: space-evenly;
+    }
+    @include iphone6 {
+      justify-content: flex-start;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-icon {
+    @include phones {
+      margin: 0;
+    }
+    @include iphone6 {
+      width: 1.875rem;
+      height: 1.875rem;
+      margin-right: 0.625rem;
+    }
+    width: 3rem;
+    height: 2.6875rem;
+    margin-right: 1.25rem;
+  }
+}
+
+.burger__image-icon-wrapp:hover .burger-compasition {
+  @include tablets {
+     left: 10.625rem;
+     width: 321px;
+  }
+  @include phones {
+     left: 80px;
+     width: 250px;
+    }
+    @include iphone6 {
+      left: 80px;
+      width: 230px;
+    }
+    @include samsung {
+      left: 60px;
+      width: 180px ;
+    }
+  opacity: 0.9;
+  transition:  0.2s ;
+  width: 270px;
+  left: 5.625rem;
+  
+}
+
+.burger__list-wrapp {
+  @include phones {
+    width: 85%;
+  }
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.burger__list {
+  @include phones {
+    width: 90%;
+  }
+@include iphone6 {
+  width: 87%;
+}
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  width: 500%;
+}
+
+.burger__item {
+  &:first-child {
+    opacity: 1;
+ }
+  display: flex;
+  flex-shrink: 0;
+  flex: 1;
+  opacity:0;
+  transition: all 1.5s;
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+
+ 
+ 
 
 
