@@ -1205,35 +1205,42 @@
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Имя</div>
-          <input type="text" class="order__input">
-        </label>
+          <input type="text" class="order__input" name="name" required>
+          <div class="error"></div>
+        </label>      
         <label class="order__block">
           <div class="order__title">Телефон</div>
-          <input type="text" class="order__input">
+          <input type="tel" class="order__input" name="phone" required>
+          <div class="error"></div>
         </label>
       </div>
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Улица</div>
-          <input type="text" class="order__input">
+          <input type="text" class="order__input" name="street" required>
+          <div class="error"></div>
         </label>
       </div>
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Дом</div>
-          <input type="text" class="order__input">
+          <input type="text" class="order__input" name="house" required>
+          <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Корпус</div>
-          <input type="text" class="order__input">
+          <input type="text" class="order__input" name="housing" required>
+          <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Квартира</div>
-          <input type="text" class="order__input">
+          <input type="text" class="order__input" name="flat" required>
+          <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Этаж</div>
-          <input type="text" class="order__input">
+          <input type="text" class="order__input" name="floor" required>
+          <div class="error"></div>
         </label>
       </div>
     </div>
@@ -1243,7 +1250,7 @@
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Комментарий</div>
-          <textarea class="order__input--textarea" placeholder=""></textarea>
+          <textarea class="order__input--textarea" name="comment" placeholder=""></textarea>
         </label>
       </div>
       <div class="form__buttons-row">

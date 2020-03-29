@@ -33,7 +33,7 @@ const items = document.querySelector('.burger__list');
 
 
 left.addEventListener('click', function(e) {
-  loop('left',e);
+  loop('left',e);  
 });
 
 right.addEventListener('click', function(e) {
@@ -42,6 +42,7 @@ right.addEventListener('click', function(e) {
 
 function loop(direction, e) {
   e.preventDefault();
+  
   if (direction==='right') {
     items.appendChild(items.firstElementChild);
   }
@@ -49,6 +50,7 @@ function loop(direction, e) {
     items.insertBefore(items.lastElementChild, items.firstElementChild);
   }
 }
+
 
   
 
@@ -182,4 +184,83 @@ for (let i = 0; i<teamitemLength; i++) {
       teamitem[i].classList.add('team__content--active'); 
     }
   })
+}
+
+
+
+//////////////////////////////ФОРМА /////////////////////////////////
+
+
+const form = document.querySelector('.form-wrap');
+const submit = document.querySelector('.btn-submit');
+
+
+submit.addEventListener('click', event => { 
+  event.preventDefault();
+
+if (validateForm(form)) {
+  const data = {
+    name:form.elements.name.value,
+    phone:form.elements.phone.value,
+    comment:form.elements.comment.value,
+    to:form.elements.to.value
+  };
+
+  
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST','https://webdev-api.loftschool.com/sendmail');
+  xhr.send(JSON.stringify(data));
+}
+
+})
+
+
+  
+
+function validateForm(form) {
+  let valid = true;
+
+  if (!validateField(form.elements.name)) {
+      valid = false;
+  }
+
+  if (!validateField(form.elements.phone)) {
+      valid = false;
+  }
+
+  if (!validateField(form.elements.street)) {
+    valid = false;
+}
+
+if (!validateField(form.elements.house)) {
+  valid = false;
+}
+
+if (!validateField(form.elements.housing)) {
+  valid = false;
+}
+
+if (!validateField(form.elements.flat)) {
+  valid = false;
+}
+
+if (!validateField(form.elements.floor)) {
+  valid = false;
+}
+ 
+
+  return valid;
+}
+
+function validateField(field) {
+  if (!field.checkValidity()) {
+      field.nextElementSibling.textContent = field.validationMessage;
+
+      return false;
+  } else {
+      field.nextElementSibling.textContent = '';
+
+      return true;
+  }
 }
