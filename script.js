@@ -49,10 +49,11 @@ function loop(direction, e) {
   else {
     items.insertBefore(items.lastElementChild, items.firstElementChild);
   }
+
 }
 
 
-  
+
 
 
 //////////////////второй вариант//////////////////
@@ -195,24 +196,21 @@ const form = document.querySelector('.form-wrap');
 const submit = document.querySelector('.btn-submit');
 
 
-submit.addEventListener('click', event => { 
+form.addEventListener('submit', event => { 
   event.preventDefault();
 
 if (validateForm(form)) {
-  const data = {
-    name:form.elements.name.value,
-    phone:form.elements.phone.value,
-    comment:form.elements.comment.value,
-    to:form.elements.to.value
+  const formData = new FormData();
+    formData.append('name',  form.elements.name.value);
+    formData.append('phone',  form.elements.phone.value);
+    formData.append('comment',  form.elements.comment.value);
+    formData.append('to',  'mi@gmail.com');
   };
 
   
-
   const xhr = new XMLHttpRequest();
   xhr.open('POST','https://webdev-api.loftschool.com/sendmail');
-  xhr.send(JSON.stringify(data));
-}
-
+  xhr.send(JSON.stringify(FormData));
 })
 
 
@@ -264,3 +262,56 @@ function validateField(field) {
       return true;
   }
 }
+
+
+//////////////////OVERLAY REVIEWS////////////////////
+
+
+const reviews = document.querySelector('.reviews__list');
+const overlay = document.querySelector('.overlay');
+const popupName = document.querySelector('.popup__name');
+const popupText = document.querySelector('.popup__text');
+const closePopup = document.querySelector('.close-popup');
+
+reviews.addEventListener('click', e => {
+  let element = e.target;
+
+  if (element.tagName === 'BUTTON') {
+  let modalName = element.previousElementSibling.previousElementSibling.innerHTML;
+   let modalText = element.previousElementSibling.innerHTML;
+ 
+   popupName.innerHTML = modalName;
+    popupText.innerHTML = modalText;
+    overlay.style.display = 'block';
+    body.style.overflow = 'hidden';
+  }
+
+ /* if (element.tagName === 'SPAN') {
+     let modalName = element..innerHTML;
+     let modalText = element..innerHTML;
+   
+      popupName.innerHTML = modalName;
+      popupText.innerHTML = modalText;
+      overlay.style.display = 'block';
+      body.style.overflow = 'hidden';
+    }*/
+  
+
+})
+
+
+
+
+closePopup.addEventListener('click', e => {
+  overlay.style.display = 'none';
+  body.style.overflow = 'visible';
+})
+
+document.addEventListener('keyup', e => {
+  let keyName = e.key;
+
+  if(keyName === 'Escape') {
+    overlay.style.display = 'none';
+    body.style.overflow = 'visible';
+  }
+})
