@@ -294,6 +294,9 @@
 
 
 .btn-submit {
+  @include phones {
+    width: 5.375rem;
+  }
   width: 6.0625rem;
   height: 2.1875rem;
   background-color: #e45028;
