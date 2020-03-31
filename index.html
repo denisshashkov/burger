@@ -1211,19 +1211,19 @@
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Имя</div>
-          <input type="text" class="order__input" name="name" required>
+          <input type="text" class="order__input" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required>
           <div class="error"></div>
         </label>      
         <label class="order__block">
           <div class="order__title">Телефон</div>
-          <input type="tel" class="order__input" name="phone" required>
+          <input type="text" class="order__input" name="phone" pattern="^[\0-9]+$" required>
           <div class="error"></div>
         </label>
       </div>
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Улица</div>
-          <input type="text" class="order__input" name="street" required>
+          <input type="text" class="order__input" name="street" pattern="[A-Za-zА-Яа-яЁё\s]+$" required>
           <div class="error"></div>
         </label>
       </div>
@@ -1235,17 +1235,17 @@
         </label>
         <label class="order__block">
           <div class="order__title">Корпус</div>
-          <input type="text" class="order__input" name="housing" required>
+          <input type="text" class="order__input" name="housing" pattern="^[0-9]+$" required>
           <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Квартира</div>
-          <input type="text" class="order__input" name="flat" required>
+          <input type="text" class="order__input" name="flat" pattern="^0*[1-9]\d*$" required>
           <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Этаж</div>
-          <input type="text" class="order__input" name="floor" required>
+          <input type="text" class="order__input" name="floor" pattern="^0*[1-9]\d*$" required>
           <div class="error"></div>
         </label>
       </div>
@@ -1299,12 +1299,28 @@
 
     </div>
    
+
+   
+
     </form>
 
+    <div class="order-overlay">
+      <div class="order-popup">                
+        <p class="order__popup__text">Сообщение отправлено</p>
+        <button class="btn-close">закрыть</button>          
+      </div>
+    </div>
+
+    <div class="order-overlay-error">
+      <div class="order-popup">                
+        <p class="order__popup__text">произошла ошибка</p>
+        <button class="btn-close-error">закрыть</button>          
+      </div>
+    </div>
     
     
     
-  
+    
 
   </div>
 

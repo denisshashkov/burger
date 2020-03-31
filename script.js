@@ -43,13 +43,16 @@ right.addEventListener('click', function(e) {
 function loop(direction, e) {
   e.preventDefault();
   
+
+
   if (direction==='right') {
     items.appendChild(items.firstElementChild);
   }
   else {
     items.insertBefore(items.lastElementChild, items.firstElementChild);
-  }
-
+ }
+ 
+ 
 }
 
 
@@ -193,25 +196,42 @@ for (let i = 0; i<teamitemLength; i++) {
 
 
 const form = document.querySelector('.form-wrap');
-const submit = document.querySelector('.btn-submit');
+const orderButton = document.querySelector('.btn-submit');
+const orderOverlay = document.querySelector('.order-overlay');
+const orderOverlayError = document.querySelector('.order-overlay-error');
+const closed = document.querySelector('.btn-close');
+const closeError = document.querySelector('.btn-close-error');
 
 
-form.addEventListener('submit', event => { 
-  event.preventDefault();
+orderButton.addEventListener('click', e => { 
+ e.preventDefault();
+
+  const formData = new FormData();
+  formData.append('name',  form.elements.name.value);
+  formData.append('phone',  form.elements.phone.value);
+  formData.append('comment',  form.elements.comment.value);
+  formData.append('to',  'mi@gmail.com');
 
 if (validateForm(form)) {
-  const formData = new FormData();
-    formData.append('name',  form.elements.name.value);
-    formData.append('phone',  form.elements.phone.value);
-    formData.append('comment',  form.elements.comment.value);
-    formData.append('to',  'mi@gmail.com');
-  };
-
-  
   const xhr = new XMLHttpRequest();
-  xhr.open('POST','https://webdev-api.loftschool.com/sendmail');
-  xhr.send(JSON.stringify(FormData));
+  xhr.responseType = 'json';
+  xhr.open('POST',' https://webdev-api.loftschool.com/sendmail');
+  xhr.send(formData);
+  xhr.addEventListener('load', () => {
+    if(xhr.response.status >= '400') {
+     orderOverlayError.style.display = 'block';
+    }
+    else {
+      orderOverlay.style.display = 'block';
+    }
+
+    /*orderOverlay.style.display = 'block';
+    body.style.overflow = 'hidden';*/
+
+  })
+}
 })
+
 
 
   
@@ -263,6 +283,17 @@ function validateField(field) {
   }
 }
 
+closed.addEventListener('click', e => {
+  orderOverlay.style.display = 'none';
+  body.style.overflow = 'visible';
+})
+
+closeError.addEventListener('click', e => {
+  orderOverlayError.style.display = 'none';
+  body.style.overflow = 'visible';
+})
+
+
 
 //////////////////OVERLAY REVIEWS////////////////////
 
@@ -286,21 +317,18 @@ reviews.addEventListener('click', e => {
     body.style.overflow = 'hidden';
   }
 
- /* if (element.tagName === 'SPAN') {
-     let modalName = element..innerHTML;
-     let modalText = element..innerHTML;
+  if (element.tagName === 'SPAN') {
+     let modalName = element.parentNode.previousElementSibling.previousElementSibling.innerHTML;
+     let modalText = element.parentNode.previousElementSibling.innerHTML;
    
       popupName.innerHTML = modalName;
       popupText.innerHTML = modalText;
       overlay.style.display = 'block';
       body.style.overflow = 'hidden';
-    }*/
+    }
   
 
 })
-
-
-
 
 closePopup.addEventListener('click', e => {
   overlay.style.display = 'none';
@@ -313,5 +341,13 @@ document.addEventListener('keyup', e => {
   if(keyName === 'Escape') {
     overlay.style.display = 'none';
     body.style.overflow = 'visible';
+    orderOverlay.style.display = 'none';
+    orderOverlayError.style.display = 'none';
   }
 })
+
+
+////////////////////OVERLAY  ORDER///////////////////
+
+
+

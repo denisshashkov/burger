@@ -391,7 +391,7 @@ header {
   font-family: "Ubuntu";
   font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.875rem;
+  outline: none;
   text-transform: uppercase;
 }
 .btn:hover {
@@ -705,6 +705,7 @@ header {
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 @media screen and (max-width: 480px) {
@@ -713,6 +714,110 @@ header {
   }
 }
 .btn-submit:hover {
+  background-color: #c1401e;
+  transition: 0.3s;
+}
+
+.order-overlay {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.order-overlay-error {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.order-popup {
+  width: 196px;
+  height: 106px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.order-popup__text {
+  color: #2f3234;
+  font-family: "Ubuntu";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.order-overlay__error {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.btn-close {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-close:hover {
+  background-color: #c1401e;
+  transition: 0.3s;
+}
+
+.btn-close-error {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-close-error:hover {
   background-color: #c1401e;
   transition: 0.3s;
 }
