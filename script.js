@@ -203,8 +203,8 @@ const closed = document.querySelector('.btn-close');
 const closeError = document.querySelector('.btn-close-error');
 
 
-orderButton.addEventListener('click', e => { 
- e.preventDefault();
+form.addEventListener('submit', event => { 
+ event.preventDefault();
 
   const formData = new FormData();
   formData.append('name',  form.elements.name.value);
