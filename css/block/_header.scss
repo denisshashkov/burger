@@ -190,8 +190,9 @@ header {
   color: #ffffff;
   font-family: "Ubuntu";
   font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.875rem;
+	font-weight: 500;
+	outline: none;
+  //line-height: 1.875rem;
   text-transform: uppercase;
 &:hover {
   cursor: pointer;

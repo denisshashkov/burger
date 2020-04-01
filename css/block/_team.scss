@@ -17,11 +17,16 @@
   &__content{
     position: relative;
     margin-bottom: 0.625rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__compasition {
-    align-items: center;
-    width: 50%;
+    @include iphone6 {
+      width: 70%;
+    }
+    width: 52%;
     display: flex;
     flex-direction: column;
   }
@@ -61,11 +66,15 @@
   &__title {
     @include phones {
       font-size: 3.125rem;
+      top: 5px;
     }
     @include iphone {
       margin: 0;
       font-size: 2.625rem;
     }
+    
+    position: absolute;
+    top: 4.6875rem;
     color: #f9b43b;
     font-family: 'Gagalinregular';
     font-size: 4.5rem;
@@ -164,13 +173,11 @@ line-height: 1.8206rem;
   top: 40%;
 }
 
-.team__member--active{
-    display: flex;
-}
 
-.team__content--active{
-  padding: 0.625rem 0rem 0.625rem 0rem;
-}
+
+
+ 
+
 
 .team__content--active .team__username::before {
   content: "";
@@ -184,6 +191,7 @@ line-height: 1.8206rem;
   height: 0px;
   right: 105%;
   top: 40%;
+  
 }
 
 .team__content--active .team__username{
@@ -195,16 +203,26 @@ line-height: 1.7781rem;
   position: relative;
     color: #f9b43b;
     font-family: 'Gagalinregular';
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     outline: none;
     border: none;
     background: none;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    
+}
+
+.team__member--active{
+  display: flex;
 }
 
 .team__content--active .team__member{
+  @include tablets {
+    height: 14.375rem;
+  }
  overflow: visible;
- height: 25%;
+ height: 8.75rem;
+ transition: height 0.2s;
 }
+

@@ -391,7 +391,7 @@ header {
   font-family: "Ubuntu";
   font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.875rem;
+  outline: none;
   text-transform: uppercase;
 }
 .btn:hover {
@@ -705,9 +705,119 @@ header {
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
+  outline: none;
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  .btn-submit {
+    width: 5.375rem;
+  }
+}
 .btn-submit:hover {
+  background-color: #c1401e;
+  transition: 0.3s;
+}
+
+.order-overlay {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.order-overlay-error {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.order-popup {
+  width: 196px;
+  height: 106px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.order-popup__text {
+  color: #2f3234;
+  font-family: "Ubuntu";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.order-overlay__error {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.btn-close {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-close:hover {
+  background-color: #c1401e;
+  transition: 0.3s;
+}
+
+.btn-close-error {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-close-error:hover {
   background-color: #c1401e;
   transition: 0.3s;
 }
@@ -836,6 +946,7 @@ header {
   height: 2.1875rem;
   background-color: #2f3234;
   border: none;
+  outline: none;
   color: #fff;
   border-radius: 0.3125rem;
   font-family: "Ubuntu";
@@ -864,6 +975,96 @@ header {
   .btn-phone {
     opacity: 1;
   }
+}
+
+.overlay {
+  /*display: none;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(1, 1, 1, 0.6);
+  z-index: 10;*/
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8);
+}
+
+.popup {
+  position: absolute;
+  display: block;
+  width: 28.75rem;
+  height: 15.875rem;
+  box-shadow: 0 0 2.5rem rgba(0, 0, 1, 0.5);
+  background-color: #ffffff;
+  border-radius: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.25rem;
+}
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 29.5625rem;
+    height: 15.875rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .popup {
+    width: 25rem;
+    height: 15.875rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  .popup {
+    width: 22.5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .popup {
+    width: 20.625rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .popup {
+    width: 17.5rem;
+  }
+}
+
+.popup__name {
+  color: #2f3234;
+  font-family: "Gagalinregular";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.7569rem;
+}
+
+.popup__text {
+  color: #2f3234;
+  font-family: "Ubuntu";
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.close-popup {
+  position: absolute;
+  right: 1.25rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  fill: #e45028;
+}
+.close-popup:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.1s;
 }
 
 .sidebar {
@@ -955,11 +1156,18 @@ header {
   position: relative;
   margin-bottom: 0.625rem;
 }
+.team__content:last-child {
+  margin-bottom: 0;
+}
 .team__compasition {
-  align-items: center;
-  width: 50%;
+  width: 52%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 414px) {
+  .team__compasition {
+    width: 70%;
+  }
 }
 .team__member {
   display: flex;
@@ -998,6 +1206,8 @@ header {
   }
 }
 .team__title {
+  position: absolute;
+  top: 4.6875rem;
   color: #f9b43b;
   font-family: "Gagalinregular";
   font-size: 4.5rem;
@@ -1007,6 +1217,7 @@ header {
 @media screen and (max-width: 480px) {
   .team__title {
     font-size: 3.125rem;
+    top: 5px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -1114,14 +1325,6 @@ header {
   top: 40%;
 }
 
-.team__member--active {
-  display: flex;
-}
-
-.team__content--active {
-  padding: 0.625rem 0rem 0.625rem 0rem;
-}
-
 .team__content--active .team__username::before {
   content: "";
   position: absolute;
@@ -1140,13 +1343,13 @@ header {
   position: relative;
   color: #f9b43b;
   font-family: "Gagalinregular";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   outline: none;
   border: none;
   background: none;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 @media screen and (max-width: 768px) {
   .team__content--active .team__username {
@@ -1156,9 +1359,19 @@ header {
   }
 }
 
+.team__member--active {
+  display: flex;
+}
+
 .team__content--active .team__member {
   overflow: visible;
-  height: 25%;
+  height: 8.75rem;
+  transition: height 0.2s;
+}
+@media screen and (max-width: 768px) {
+  .team__content--active .team__member {
+    height: 14.375rem;
+  }
 }
 
 .section-we {
@@ -1606,8 +1819,8 @@ article {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
-  transition: width 1s;
   background-color: #2f3234;
+  transition: 0.5s;
   opacity: 0.93;
 }
 @media screen and (max-width: 480px) {
@@ -1618,6 +1831,7 @@ article {
 
 .menu-acco__item--active .menu-acco__content {
   width: 49vw;
+  transition: 0.5s;
 }
 
 .menu-acco__item--active .menu__trigger-text {
@@ -1657,8 +1871,8 @@ article {
 .scroll-right {
   cursor: pointer;
   transform: rotate(-90deg);
-  width: 26px;
-  height: 41px;
+  width: 1.625rem;
+  height: 2.5625rem;
 }
 
 .scroll-slider__icon {
@@ -1677,27 +1891,6 @@ article {
   align-items: baseline;
 }
 
-.burger__list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  margin: 0;
-}
-
-.burger__item {
-  display: none;
-  width: 100%;
-  flex-shrink: 0;
-}
-.burger__item:first-child {
-  display: flex;
-}
-@media screen and (max-width: 768px) {
-  .burger__item {
-    flex-direction: column;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .burger__image-wrap {
     padding-top: 5.625rem;
@@ -1705,8 +1898,8 @@ article {
 }
 
 .burger__image-pic {
-  width: 505px;
-  height: 329px;
+  width: 31.5625rem;
+  height: 20.5625rem;
 }
 @media screen and (max-width: 580px) {
   .burger__image-pic {
@@ -1841,46 +2034,6 @@ article {
   font-weight: 400;
 }
 
-.burger__image-icon {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: 5.625rem;
-  height: 5.625rem;
-  background-color: #e35028;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  opacity: 0.5;
-}
-@media screen and (max-width: 768px) {
-  .burger__image-icon {
-    position: absolute;
-    left: 5rem;
-  }
-}
-@media screen and (max-width: 360px) {
-  .burger__image-icon {
-    width: 4.375rem;
-    height: 4.375rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .burger__image-icon {
-    left: 0.625rem;
-  }
-}
-.burger__image-icon:hover {
-  opacity: 1;
-  transition: 0.3s;
-}
-.burger__image-icon-pic {
-  width: 2.875rem;
-  height: 2.75rem;
-}
-
 .burger__image-kkal {
   width: 5.625rem;
   height: 5.625rem;
@@ -1928,34 +2081,116 @@ article {
   position: relative;
 }
 
-.burger-compasition {
-  position: absolute;
-  background-color: #ffffff;
-  opacity: 0.9;
-  border-radius: 5px;
-  left: 5.625rem;
+.burger-compasition__item-title {
+  color: #2f3234;
+  font-family: "Ubuntu";
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-right: 3.75rem;
+  flex: auto;
 }
 @media screen and (max-width: 768px) {
-  .burger-compasition {
-    left: 10.5625rem;
-    width: 18.75rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .burger-compasition {
-    left: 6.25rem;
+  .burger-compasition__item-title {
+    flex: none;
   }
 }
 @media screen and (max-width: 414px) {
-  .burger-compasition {
-    width: 12.5rem;
+  .burger-compasition__item-title {
+    margin-right: 0.625rem;
+  }
+}
+
+.burger-compasition__item-weight {
+  color: #2f3234;
+  font-family: "Ubuntu";
+  font-size: 0.875rem;
+  font-weight: 300;
+  flex: 1;
+  text-align: right;
+}
+
+.close-compasition {
+  width: 1.125rem;
+  height: 1.125rem;
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close-compasition__icon {
+  position: absolute;
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: #e35028;
+  opacity: 0;
+  right: 2px;
+  top: 1px;
+}
+@media screen and (max-width: 768px) {
+  .close-compasition__icon {
+    opacity: 1;
+  }
+}
+.close-compasition__icon:hover {
+  transform: scale(1.2);
+  transition: 0.1s;
+}
+
+.burger__image-icon-wrapp {
+  position: relative;
+  display: inline-flex;
+}
+
+.burger__image-icon {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 5.625rem;
+  height: 5.625rem;
+  background-color: #e35028;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0.5;
+}
+@media screen and (max-width: 768px) {
+  .burger__image-icon {
+    position: absolute;
+    left: 5rem;
   }
 }
 @media screen and (max-width: 360px) {
-  .burger-compasition {
-    left: 5rem;
-    width: 11.25rem;
+  .burger__image-icon {
+    width: 4.375rem;
+    height: 4.375rem;
   }
+}
+@media screen and (max-width: 480px) {
+  .burger__image-icon {
+    left: -10px;
+  }
+}
+.burger__image-icon:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+.burger__image-icon-pic {
+  width: 2.875rem;
+  height: 2.75rem;
+}
+
+.burger-compasition {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 5px;
+  right: 999990px;
+  width: 0;
 }
 .burger-compasition__list {
   list-style: none;
@@ -1964,11 +2199,6 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-@media screen and (max-width: 480px) {
-  .burger-compasition__list {
-    padding: 1.25rem 1.875rem 1.25rem 0.625rem;
-  }
 }
 .burger-compasition__item {
   display: flex;
@@ -1979,6 +2209,11 @@ article {
 @media screen and (max-width: 768px) {
   .burger-compasition__item {
     justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 414px) {
+  .burger-compasition__item {
+    justify-content: flex-start;
   }
 }
 .burger-compasition__item:last-child {
@@ -1994,45 +2229,88 @@ article {
     margin: 0;
   }
 }
-
-.burger-compasition__item-title {
-  color: #2f3234;
-  font-family: "Ubuntu";
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-right: 3.75rem;
-  flex: auto;
-}
-@media screen and (max-width: 768px) {
-  .burger-compasition__item-title {
-    flex: none;
+@media screen and (max-width: 414px) {
+  .burger-compasition__item-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+    margin-right: 0.625rem;
   }
 }
 
-.burger-compasition__item-weight {
-  color: #2f3234;
-  font-family: "Ubuntu";
-  font-size: 0.875rem;
-  font-weight: 300;
+.burger__image-icon-wrapp:hover .burger-compasition {
+  opacity: 0.9;
+  transition: 0.2s;
+  width: 16.875rem;
+  left: 5.625rem;
+}
+@media screen and (max-width: 768px) {
+  .burger__image-icon-wrapp:hover .burger-compasition {
+    left: 10.625rem;
+    width: 20.0625rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .burger__image-icon-wrapp:hover .burger-compasition {
+    left: 5rem;
+    width: 15.625rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  .burger__image-icon-wrapp:hover .burger-compasition {
+    left: 5rem;
+    width: 14.375rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .burger__image-icon-wrapp:hover .burger-compasition {
+    left: 3.75rem;
+    width: 11.25rem;
+  }
 }
 
-.close-compasition {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
+.burger__list-wrapp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  .burger__list-wrapp {
+    width: 85%;
+  }
+}
+
+.burger__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  width: 500%;
+}
+@media screen and (max-width: 480px) {
+  .burger__list {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 414px) {
+  .burger__list {
+    width: 87%;
+  }
+}
+
+.burger__item {
+  display: flex;
+  flex-shrink: 0;
+  flex: 1;
   opacity: 0;
+  transition: all 1.5s;
+}
+.burger__item:first-child {
+  opacity: 1;
 }
 @media screen and (max-width: 768px) {
-  .close-compasition {
-    opacity: 1;
-    cursor: pointer;
-  }
-  .close-compasition:hover {
-    transform: scale(1.2);
-    transition: 0.1s;
+  .burger__item {
+    flex-direction: column;
   }
 }

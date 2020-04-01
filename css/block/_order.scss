@@ -15,9 +15,9 @@
     flex-direction: column;
     align-items: center;
   }
-  @include phones {
-   
-  }
+
+  @include phones {}
+
   display: flex;
   justify-content: space-between;
 }
@@ -25,10 +25,12 @@
 .form__buttons-row {
   margin-bottom: 1.25rem;
 }
+
 .order-section {
   @include iphone {
     min-height: 0;
   }
+
   background: url("../../image/order/2-layers.png") center center / cover no-repeat;
   height: 100vh;
   min-height: 40.625rem;
@@ -39,13 +41,16 @@
   @include phones {
     font-size: 3.125rem;
   }
+
   @include samsung {
     margin: 0;
   }
-  @include iphone{
+
+  @include iphone {
     margin: 0;
     font-size: 2.5rem;
   }
+
   margin: 0;
   display: flex;
   justify-content: center;
@@ -62,22 +67,26 @@
     width: 29.5rem;
     padding-left: 0;
   }
+
   @include phones {
     width: 100%;
     padding: 0px 0.9375rem;
   }
+
   width: calc(100% / 2 - 0.625rem);
-  
+
 }
 
 .order-right {
   @include tablets {
     width: 29.5rem;
   }
+
   @include phones {
     width: 100%;
     padding: 0px 0.9375rem;
   }
+
   width: calc(100% / 2 - 0.625rem);
 }
 
@@ -86,12 +95,15 @@
   @include phones {
     justify-content: center;
   }
+
   @include iphone {
     margin-bottom: 0.625rem;
   }
+
   display: flex;
   margin-bottom: 1.25rem;
-  &:nth-child(3){
+
+  &:nth-child(3) {
     margin-bottom: 0;
   }
 }
@@ -109,13 +121,13 @@
   margin-right: 0;
 }
 
-.order__block:nth-child(4){
+.order__block:nth-child(4) {
   @include phones {
     display: none;
   }
 }
 
-.order__block{
+.order__block {
   max-width: 100%;
 }
 
@@ -144,9 +156,11 @@
   @include tablets {
     width: 29.5rem;
   }
-  @include phones{
+
+  @include phones {
     max-width: 100%;
   }
+
   width: 28.4375rem;
   height: 7.0625rem;
   border: 0.125rem solid;
@@ -166,6 +180,7 @@
   @include phones {
     justify-content: center;
   }
+
   display: flex;
   margin-bottom: 1.25rem;
 }
@@ -174,8 +189,9 @@
   @include phones {
     justify-content: center;
   }
+
   display: flex;
-  
+
 }
 
 .switch-controls__buttons {
@@ -277,21 +293,136 @@
 
 
 
-.btn-submit{
+.btn-submit {
+  @include phones {
+    width: 5.375rem;
+  }
   width: 6.0625rem;
-height: 2.1875rem;
-background-color: #e45028;
-color: #ffffff;
-font-family: 'Ubuntu';
-font-size: 0.8125rem;
-font-weight: 500;
-line-height: 1.875rem;
-text-transform: uppercase;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: 'Ubuntu';
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c1401e;
+    transition: 0.3s;
+  }
+}
+
+
+.order-overlay  {
+  display: none;
+  height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8) 
+}
+
+.order-overlay-error {
+  display: none;
+  height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8) 
+}
+
+.order-popup {
+  width: 196px;
+height: 106px;
+background-color: #fff;
 border-radius: 5px;
-border: none;
-cursor: pointer;
-&:hover{
-  background-color: #c1401e;
-  transition: 0.3s;
+position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+&__text {
+color: #2f3234;
+font-family: 'Ubuntu';
+font-size: 14px;
+font-weight: 300;
+line-height: 24px;
 }
 }
+
+.order-overlay__error {
+  display: none;
+  height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	align-items: center;
+  justify-content: center;
+  background: rgba(25, 26, 26, 0.8)
+}
+
+.btn-close {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: 'Ubuntu';
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c1401e;
+    transition: 0.3s;
+  }
+}
+ 
+.btn-close-error {
+  width: 6.0625rem;
+  height: 2.1875rem;
+  background-color: #e45028;
+  color: #ffffff;
+  font-family: 'Ubuntu';
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c1401e;
+    transition: 0.3s;
+  }
+}
+ 
+
+

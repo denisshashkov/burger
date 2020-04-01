@@ -94,11 +94,6 @@
 }
 
 
-
-
-
-
-
 .menu-acco__content {
   height: 100%;
   overflow: hidden;
@@ -158,15 +153,17 @@
     font-size: 1rem;
     position: relative;
     overflow: hidden;
-    transition: width 1s;
     background-color: #2f3234;
+    transition: 0.5s;
   opacity: 0.93;
 }
 
 .menu-acco__item--active .menu-acco__content {
   width: 49vw;
+  transition: 0.5s;
 }
 
 .menu-acco__item--active .menu__trigger-text{
   color: #f9b43b;
 }
+
