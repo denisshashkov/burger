@@ -220,19 +220,71 @@ if (validateForm(form)) {
   xhr.addEventListener('load', () => {
     if(xhr.response.status >= '400') {
      orderOverlayError.style.display = 'block';
+     body.style.overflow = 'hidden';
     }
     else {
       orderOverlay.style.display = 'block';
+      body.style.overflow = 'hidden';
     }
-
-    /*orderOverlay.style.display = 'block';
-    body.style.overflow = 'hidden';*/
 
   })
 }
 })
+////////////запрет на числа в поле с именем/////////////////
+form.elements.name.addEventListener('keydown', e => {
 
+let keyNumber = e.key;
 
+  if ( keyNumber >= '0' && keyNumber <= '9'){
+  e.preventDefault();
+  }
+});
+////////////запрет на буквы в поле с телефоном///////////////
+form.elements.phone.addEventListener('keydown', e => {
+
+  let keyphone = e.key;
+  
+    if (keyphone >= '0' && keyphone <= '9'|| keyphone == '(' || keyphone == ')'|| keyphone == '+'||
+     keyphone == '-'||keyphone == 'ArrowLeft' || keyphone == 'ArrowRight' || keyphone == 'Delete' || keyphone == 'Backspace') {
+    return true;
+    }
+    else {
+      e.preventDefault();
+    }
+  });
+  /////////////запрет на числа в поле улица//////////////////
+  form.elements.street.addEventListener('keydown', e => {
+
+    let keyStreet = e.key;
+    
+      if ( keyStreet >= '0' && keyStreet <= '9'){
+      e.preventDefault();
+      }
+    });  
+//////////////запрет на буквы в поле квартира////////////////////
+form.elements.flat.addEventListener('keydown', e => {
+
+  let keyflat = e.key;
+  
+    if (keyflat >= '0' && keyflat <= '9'||keyflat == 'ArrowLeft' || keyflat == 'ArrowRight' || keyflat == 'Delete' || keyflat == 'Backspace') {
+    return true;
+    }
+    else {
+      e.preventDefault();
+    }
+  });
+///////////////запрет на буквы в поле этаж////////////////////////
+form.elements.floor.addEventListener('keydown', e => {
+
+  let keyfloor = e.key;
+  
+    if (keyfloor >= '0' && keyfloor <= '9'||keyfloor == 'ArrowLeft' || keyfloor == 'ArrowRight' || keyfloor == 'Delete' || keyfloor == 'Backspace') {
+    return true;
+    }
+    else {
+      e.preventDefault();
+    }
+  });
 
   
 
