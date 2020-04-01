@@ -1820,6 +1820,7 @@ article {
   position: relative;
   overflow: hidden;
   background-color: #2f3234;
+  transition: 0.5s;
   opacity: 0.93;
 }
 @media screen and (max-width: 480px) {
@@ -1830,7 +1831,7 @@ article {
 
 .menu-acco__item--active .menu-acco__content {
   width: 49vw;
-  transition: width 0.7s;
+  transition: 0.5s;
 }
 
 .menu-acco__item--active .menu__trigger-text {
