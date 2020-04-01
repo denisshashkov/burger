@@ -942,7 +942,7 @@
     <li class="menu-acco__item  menu-acco__item--active">
       <a href="" class="menu-acco__trigger menu-acco__trigger-one"><span class="menu__trigger-text">для мясоедов</span>
       </a>
-      <div class="menu-acco__content">
+      <div class="menu-acco__content menu-acco__content--active">
        
         <div class="menu-acco__text">Задача организации, в особенности же
            начало повседневной работы по формированию позиции позволяет 
@@ -1211,41 +1211,41 @@
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Имя</div>
-          <input type="text" class="order__input" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required>
+          <input type="text" class="order__input" name="name" required>
           <div class="error"></div>
         </label>      
         <label class="order__block">
           <div class="order__title">Телефон</div>
-          <input type="text" class="order__input" name="phone" pattern="^[\0-9]+$" required>
+          <input type="text" class="order__input" name="phone" required>
           <div class="error"></div>
         </label>
       </div>
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Улица</div>
-          <input type="text" class="order__input" name="street" pattern="[A-Za-zА-Яа-яЁё\s]+$" required>
+          <input type="text" class="order__input" name="street">
           <div class="error"></div>
         </label>
       </div>
       <div class="order__row">
         <label class="order__block">
           <div class="order__title">Дом</div>
-          <input type="text" class="order__input" maxlength="3" name="house" required>
+          <input type="text" class="order__input" maxlength="3" name="house" >
           <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Корпус</div>
-          <input type="text" class="order__input" maxlength="2" name="housing" pattern="^[0-9]+$" required>
+          <input type="text" class="order__input" maxlength="3" name="housing" >
           <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Квартира</div>
-          <input type="text" class="order__input" maxlength="3" name="flat" pattern="^0*[1-9]\d*$" required>
+          <input type="text" class="order__input" maxlength="3" name="flat">
           <div class="error"></div>
         </label>
         <label class="order__block">
           <div class="order__title">Этаж</div>
-          <input type="text" class="order__input" maxlength="3" name="floor" pattern="^0*[1-9]\d*$" >
+          <input type="text" class="order__input" maxlength="3" name="floor">
           <div class="error"></div>
         </label>
       </div>

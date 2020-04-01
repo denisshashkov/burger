@@ -1819,7 +1819,6 @@ article {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
-  transition: width 1s;
   background-color: #2f3234;
   opacity: 0.93;
 }
@@ -1831,6 +1830,7 @@ article {
 
 .menu-acco__item--active .menu-acco__content {
   width: 49vw;
+  transition: width 0.7s;
 }
 
 .menu-acco__item--active .menu__trigger-text {

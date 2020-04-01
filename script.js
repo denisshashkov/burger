@@ -134,11 +134,13 @@ burgerbutton.addEventListener('mouseout',  e=> {
 
 const menu = document.querySelector('.menu-choice'),
      accoitem = document.querySelectorAll('.menu-acco__item'),
+     accoContent = document.querySelector('.menu-acco__content');
      accoitemlength = accoitem.length;
 
 menu.addEventListener('click', e => {
 for (let i = 0; i<accoitemlength; i++) {
   accoitem[i].classList.remove('menu-acco__item--active'); 
+  
 }
 })
 
@@ -146,7 +148,7 @@ for (let i = 0; i<accoitemlength; i++) {
   accoitem[i].addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
-
+   
     if (accoitem[i].classList.contains('menu-acco__item--active')){
       accoitem[i].classList.remove('menu-acco__item--active'); 
     }
@@ -201,7 +203,7 @@ const orderOverlay = document.querySelector('.order-overlay');
 const orderOverlayError = document.querySelector('.order-overlay-error');
 const closed = document.querySelector('.btn-close');
 const closeError = document.querySelector('.btn-close-error');
-
+const orderInput = document.querySelector('.order__input');
 
 form.addEventListener('submit', event => { 
  event.preventDefault();
@@ -225,6 +227,14 @@ if (validateForm(form)) {
     else {
       orderOverlay.style.display = 'block';
       body.style.overflow = 'hidden';
+      form.elements.name.value ="";
+      form.elements.phone.value ="";
+      form.elements.street.value ="";
+      form.elements.house.value ="";
+      form.elements.housing.value ="";
+      form.elements.flat.value ="";
+      form.elements.floor.value ="";
+      form.elements.comment.value ="";
     }
 
   })
