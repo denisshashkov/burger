@@ -25,107 +25,6 @@ close.addEventListener('click',function(){
 })
 
 
-//////////////Слайдер бургер/////////////////////////////
-
-const left = document.querySelector('.scroll-left');
-const right = document.querySelector('.scroll-right');
-const items = document.querySelector('.burger__list');
-
-
-left.addEventListener('click', function(e) {
-  loop('left',e);  
-});
-
-right.addEventListener('click', function(e) {
-  loop('right',e);
-});
-
-function loop(direction, e) {
-  e.preventDefault();
-  
-
-
-  if (direction==='right') {
-    items.appendChild(items.firstElementChild);
-  }
-  else {
-    items.insertBefore(items.lastElementChild, items.firstElementChild);
- }
- 
- 
-}
-
-
-
-
-
-//////////////////второй вариант//////////////////
-
-/*const carousel = document.querySelector('.burger__list-wrapp');
-const slider = document.querySelector('.burger__list');
-
-const next = document.querySelector('.scroll-right');
-const prev = document.querySelector('.scroll-left');
-var direction;
-
-prev.addEventListener('click', function(e) {
-  e.preventDefault();
-  if(direction === -1) {
-    slider.appendChild(slider.firstElementChild); 
-    direction = 1;
-  }
-  carousel.style.justifyContent = 'flex-end';
-  slider.style.transform = 'translate(20%)'; 
-});
-
-
-next.addEventListener('click', function(e) {
-  e.preventDefault();
-  direction = -1;
-  carousel.style.justifyContent = 'flex-start';
-  slider.style.transform = 'translate(-20%)'; 
-});
-
-
-
-slider.addEventListener('transitionend', function() {
-  if(direction === -1) {
-    slider.appendChild(slider.firstElementChild);
-  } else if(direction === 1) {
-    slider.prepend(slider.lastElementChild);
-  } 
- 
-
-  slider.style.transition = 'none';
-  slider.style.transform = 'translate(0)';
-  setTimeout(function() {
-    slider.style.transition = 'all 0.3s';
-  })
- 
-})*/
- 
-
-
-
-
-
-
-//////////////Состав бургера/////////////////////
-
-/*const compasition = document.querySelector('.burger-compasition');
-const burgerbutton = document.querySelector('.burger__image-icon');
-const closecompasition = document.querySelector('.close-compasition');
-
-burgerbutton.addEventListener('mouseover',  e=> {
-  if(compasition.style.opacity == 0) {compasition.style.opacity = 0.9;
-}
-})
-
-burgerbutton.addEventListener('mouseout',  e=> {
-  if(compasition.style.opacity == 0.9) {compasition.style.opacity = 0;
-}
-})*/
-
 
 
 
@@ -409,7 +308,303 @@ document.addEventListener('keyup', e => {
 })
 
 
-////////////////////OVERLAY  ORDER///////////////////
+//////////////Слайдер бургер/////////////////////////////
+
+const left = document.querySelector('.scroll-left');
+const right = document.querySelector('.scroll-right');
+const items = document.querySelector('.burger__list');
 
 
+left.addEventListener('click', function(e) {
+  loop('left',e);  
+});
+
+right.addEventListener('click', function(e) {
+  loop('right',e);
+});
+
+function loop(direction, e) {
+  e.preventDefault();
+  
+
+
+  if (direction==='right') {
+    items.appendChild(items.firstElementChild);
+  }
+  else {
+    items.insertBefore(items.lastElementChild, items.firstElementChild);
+ }
+ 
+ 
+}
+
+
+
+////////////////КАРТА YANDEX//////////////////////////////
+
+let myMap;
+
+const init = () => {
+  myMap=new ymaps.Map("map", {
+  center: [59.935274, 30.312388],
+  zoom: 11,
+  //controls: []
+  });
+
+
+  const coords = [
+    [59.94554327989287, 30.38935262114668],
+    [59.91142323563989, 30.50024587065841],
+    [59.88693161784606, 30.319658102103713],
+    [59.97033574821672, 30.315194906302924]
+  ];
+
+  const myCollection = new ymaps.GeoObjectCollection({},{
+    dragable: false,
+    iconLayout: 'default#image',
+    iconImageHref: "../image/icons/map-marker.svg",
+    iconImageSize: [46,57],
+    iconImageOffset: [-35,-52]
+  });
+
+  coords.forEach(coord => {
+    myCollection.add(new ymaps.Placemark(coord));
+  });
+  
+  myMap.geoObjects.add(myCollection);
+
+  myMap.behaviors.disable('scrollZoom');
+
+ 
+
+  }
+
+ymaps.ready(init);
+
+
+///////////////////////PLAYER///////////////////////////
+
+
+
+let player;
+const playerContainer = $(".player");
+
+let eventsInit = () => {
+  $(".player__start").click(e =>{
+    e.preventDefault();
+   
+    if(playerContainer.hasClass("paused")){
+      playerContainer.removeClass("paused");
+     player.pauseVideo();
+    } else{
+    player.playVideo();
+    }
+  }); 
+
+    $(".player__splash").click(e => {
+      player.playVideo();
+    })
+
+};
+
+
+
+$(".player__playback").click( e => {
+  const bar = $(e.currentTarget);
+ const clickedPosition = e.originalEvent.LayerX;
+ const newButtonPositionPercent = (clickedPosition/bar.width())*100;
+ const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
+ player.seekTo(newPlaybackPositionSec);
+});
+
+
+const onPlayerReady = () => {
+  let interval;
+  const durationSec = player.getDuration();
+
+ 
+ 
+  interval = setInterval(() => {
+    const completedSec = player.getCurrentTime();
+    const completedPercent = (completedSec/durationSec)*100;
+    
+    $(".player__playback-button").css({
+      left: `${completedPercent}%`
+    });
+  },1000);
+};
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+const onPlayerStateChange = event => {
+/*
+-1 (воспроизведение видео не начато)
+0 (воспроизведение видео завершено)
+1 (воспроизведение)
+2 (пауза)
+3 (буферизация)
+5 (видео подают реплики).
+*/
+
+  switch (event.data) {
+    case 1:
+      playerContainer.addClass('active');
+      playerContainer.addClass("paused");
+      break;
+
+    case 2:
+      playerContainer.removeClass('active');
+      playerContainer.removeClass("paused");
+      break;  
+  }
+};
+
+
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("yt-player", {
+    height: "405",
+    width: "660",
+    videoId: "V5w1OGknhlc",
+    events: {
+     'onReady': onPlayerReady,
+     'onStateChange': onPlayerStateChange
+    },
+
+    playerVars: {
+      controls: 0,
+      disablekb: 0,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
+    }
+
+  });
+}
+
+eventsInit();
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+///////////////ONE PAGE SCROLL/////////////////////////////
+
+
+const sections = $(".section");
+const display = $(".maincontent");
+
+let inScroll = false;
+/////////////////////////////////////////
+const performTransition = sectionEq => {
+  if (inScroll === false) {
+    inScroll = true;
+    const position = sectionEq * -100;
+
+    sections.eq(sections.eq).addClass("active").siblings().removeClass("active");
+  
+    display.css({
+      transform: `translateY(${position}%)`
+    });
+
+   setTimeout(() => {
+     inScroll = false;
+   },1300);
+  }
+}
+/////////////////////////////////////
+  const scrollSection = direction => {
+    const activeSection = sections.filter(".active");
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
+    if (nextSection.length && direction === "next") {
+      performTransition(nextSection.index());
+    }
+    if (prevSection.length && direction === "prev") {
+      performTransition(prevSection.index());
+    }
+  }
+////////////////////////////////////
+$(window).on("wheel", e => {
+const deltaY = e.originalEvent.deltaY;
+
+if (deltaY > 0) {
+  scrollSection("next");
+}
+if (deltaY < 0) {
+  scrollSection("prev");
+} 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////SLIDER JQUERY///////////////////
+
+/*$(function() {
+
+  $('.scroll-right').on('click',function(e) {
+    e.preventDefault();
+
+    var $this = $(this),
+         container =$this.closest('.burger__list-wrapp'),
+        items = container.find('.burger__item'),
+        activeSlide = items.filter('.active'),
+         reqitem = activeSlide.next(),
+         reqindex = reqitem.index(),
+         list = container.find('.burger__list'),
+         duration = 500;
+
+     list.animate({
+       'left':-reqindex*100+'%'
+     },duration);   
+
+  })
+})*/
 

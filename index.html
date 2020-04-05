@@ -6,12 +6,16 @@
   <title>Burger</title>
   <link rel="stylesheet" href="css/layout/normalize.css">
   <link rel="stylesheet" href="css/layout/main.css">
+ 
 </head>
 <body>
 
   <div class="wrapper">
 
-    <section class=" section section-first-screen">
+
+    <main class="maincontent">
+
+    <section class=" section section-first-screen active">
       <div class="container first-container">
 
        <header class="header">
@@ -822,7 +826,7 @@
 
 
 
-<section class="team">
+<section class="section team">
 
   <div class="container team-container">
 
@@ -936,7 +940,7 @@
 
 
 
-<section class="menu-choice">
+<section class="section menu-choice">
   <div class="section-menu__title">меню</div>
   <ul class="menu-acco">
     <li class="menu-acco__item  menu-acco__item--active">
@@ -1011,7 +1015,7 @@
 
 
 
-<section class="reviews">
+<section class="section reviews">
   
     <ul class="reviews__list">
       <li class="reviews__item review">
@@ -1203,6 +1207,65 @@
 
 
 
+
+
+
+
+
+<section class="section player-section">
+
+  <div class="container player-container">
+
+    <h2 class="section__player-title">как мы работаем</h2>
+
+    <div class="player-section__container">
+
+      <div class="player ">
+
+        <div class="player__wrapper">
+          <div id="yt-player" class="player__elem"></div>
+          <div class="player__splash">
+            <svg class="player__splash-icon">
+              <use xlink:href="./image/svg/sprite.svg#play"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="player__controls">
+          <button class="player__start">
+            
+          </button>
+          <div class="player__playback">           
+            <button class="player__playback-button"></button>
+          </div>
+          <div class="player__volume">
+            <button class="player__volume-icon">
+              <svg class="player__volume-icon-pic">
+                <use xlink:href="./image/svg/sprite.svg#volume"></use>
+              </svg>
+            </button>
+            <div class="player__volume-track">
+              <button class="player__volume-track-button"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
 <section class="section order-section">
   <div class="container">
     <h2 class="section__title">Закажите доставку</h2>
@@ -1340,8 +1403,10 @@
 
 
 
+    
+
   <footer class="footer">
-    <div class="container ">
+    <div class="container">
       <div class="footer__left">
         <div class="footer__address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
         <a class="footer__phone" href="tel:+78123771377">
@@ -1373,8 +1438,9 @@
     </div>
   </footer>
 
- 
- 
+
+    </main>
+    
 
 
 
@@ -1429,9 +1495,13 @@
  
 
 
-
-
-  <script src="./script.js"></script>
+  
+  <script src="./library/jquery-3.4.1.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./scripts/script.js"></script>
+  
 
  
 

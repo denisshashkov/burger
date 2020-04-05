@@ -8,11 +8,16 @@
   }
 
   background: linear-gradient(#F9B43B, #EB8E38, #F9B43B);
+  align-items: center;
 }
 
 .burgers-container {
   display: flex;
   margin: 0 auto;
+}
+
+.burger__item--active {
+  display: flex;
 }
 
 .scroll {
@@ -432,7 +437,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  overflow: hidden;
+ overflow: hidden;
 }
 
 .burger__list {
