@@ -438,13 +438,6 @@ const onPlayerReady = () => {
 
 
 
-  
-
-
-
-
-
-
 
 
 
@@ -499,7 +492,6 @@ function onYouTubeIframeAPIReady() {
 }
 
 eventsInit();
-////////////////////////////////////////////////////////////////////
 
 
 
@@ -514,23 +506,26 @@ const sections = $(".section");
 const display = $(".maincontent");
 
 let inScroll = false;
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile();
 /////////////////////////////////////////
-const performTransition = sectionEq => {
+const performTransition = (sectionEq) => {
   if (inScroll === false) {
     inScroll = true;
-    const position = sectionEq * -100;
+    const position =  sectionEq * -100;
 
-    sections.eq(sections.eq).addClass("active").siblings().removeClass("active");
+    sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
   
     display.css({
-      transform: `translateY(${position}%)`
+      transform: `translateY(${position}%)`,
     });
 
    setTimeout(() => {
+     $(".nav__item").eq(sectionEq).addClass(" nav__item--active").siblings().removeClass("nav__item--active");
      inScroll = false;
-   },1300);
+   },500);
   }
-}
+};
 /////////////////////////////////////
   const scrollSection = direction => {
     const activeSection = sections.filter(".active");
@@ -555,12 +550,64 @@ if (deltaY < 0) {
 } 
 });
 
+/////////////////////////////////////
+$(document).on("keydown", (e) => {
+
+const tagName = e.target.tagName.toLowerCase();
+if (tagName != "input" && tagName != "textarea") {
+  switch (e.keyCode) {
+    case 38:
+      scrollSection("prev");
+    break;
+    case 40:
+      scrollSection("next");
+      break;
+  }
+}
+});
+
+/////////////////////////////////////////
+$("[data-scroll-to]").on("click", e => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const target = $this.attr("data-scroll-to");
+
+  performTransition(target);
+})
+///////////////////////////////////////////
+
+if (isMobile) {
+  $("body").swipe({
+    swipe: (event, direction) => {
+      let scrollDirection;
+      if (direction === "up") scrollDirection = "next";
+      if (direction === "down") scrollDirection = "prev";
+  
+      scrollSection(scrollDirection);
+    },
+  
+  });  
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
 
 
 
