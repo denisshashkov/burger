@@ -382,116 +382,97 @@ const init = () => {
 ymaps.ready(init);
 
 
-///////////////////////PLAYER///////////////////////////
 
 
 
-let player;
-const playerContainer = $(".player");
+///////////////// PLAYER////////////////////
 
-let eventsInit = () => {
-  $(".player__start").click(e =>{
-    e.preventDefault();
-   
-    if(playerContainer.hasClass("paused")){
-      playerContainer.removeClass("paused");
-     player.pauseVideo();
-    } else{
-    player.playVideo();
+(function() {
+  const player = document.querySelector('.player');
+  const playerStart = document.querySelector('.player__start');
+  const video = document.querySelector('.player__elem');
+  const playerPlaybackBtn = document.querySelector('.player__playback-button');
+  const playerPlayback = document.querySelector('.player__playback');
+  const playerVolBtn = document.querySelector('.player__volume-icon');
+  const playerVolume = document.querySelector('.player__volume-track');
+  const playerVolumeBtn = document.querySelector('.player__volume-track-button');
+  const playerSplash = document.querySelector('.player__splash');
+  
+
+
+  playerStart.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      playerSplash.style.opacity = "0";
+      
     }
-  }); 
-
-    $(".player__splash").click(e => {
-      player.playVideo();
-    })
-
-};
-
-
-
-$(".player__playback").click( e => {
-  const bar = $(e.currentTarget);
- const clickedPosition = e.originalEvent.LayerX;
- const newButtonPositionPercent = (clickedPosition/bar.width())*100;
- const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
- player.seekTo(newPlaybackPositionSec);
-});
-
-
-const onPlayerReady = () => {
-  let interval;
-  const durationSec = player.getDuration();
-
- 
- 
-  interval = setInterval(() => {
-    const completedSec = player.getCurrentTime();
-    const completedPercent = (completedSec/durationSec)*100;
-    
-    $(".player__playback-button").css({
-      left: `${completedPercent}%`
-    });
-  },1000);
-};
-
-
-
-
-
-
-
-
-
-
-
-const onPlayerStateChange = event => {
-/*
--1 (воспроизведение видео не начато)
-0 (воспроизведение видео завершено)
-1 (воспроизведение)
-2 (пауза)
-3 (буферизация)
-5 (видео подают реплики).
-*/
-
-  switch (event.data) {
-    case 1:
-      playerContainer.addClass('active');
-      playerContainer.addClass("paused");
-      break;
-
-    case 2:
-      playerContainer.removeClass('active');
-      playerContainer.removeClass("paused");
-      break;  
-  }
-};
-
-
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("yt-player", {
-    height: "405",
-    width: "660",
-    videoId: "V5w1OGknhlc",
-    events: {
-     'onReady': onPlayerReady,
-     'onStateChange': onPlayerStateChange
-    },
-
-    playerVars: {
-      controls: 0,
-      disablekb: 0,
-      showinfo: 0,
-      rel: 0,
-      autoplay: 0,
-      modestbranding: 0
+    else {
+      video.pause();
+      playerSplash.style.opacity = "1";
     }
+  })
 
+  playerSplash.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      playerSplash.style.opacity = "0";
+    }
+    else {
+      video.pause();
+      playerSplash.style.opacity = "1";
+      
+    }
+  })
+
+  
+
+
+  video.addEventListener('timeupdate', (event) => {
+    const completedSec = video.currentTime;
+    const completedPercent = (completedSec / video.duration) * 100;
+    playerPlaybackBtn.style.left = `${completedPercent}%`
   });
-}
 
-eventsInit();
+  video.addEventListener('ended', function () {
+    video.currentTime = 0;
+    playerSplash.style.display = "block"
+  });
+
+  playerPlayback.addEventListener('click', (e) => {
+    const bar = $(e.currentTarget);
+    const newButtonPosition = e.pageX - bar.offset().left;
+    const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
+    const newPlayerTimeSec = (video.duration / 100) * buttonPosPercent;
+    playerPlaybackBtn.style.left = `${buttonPosPercent}%`
+    video.currentTime = newPlayerTimeSec
+  })
+
+  playerVolBtn.addEventListener('click', () => {
+    video.volume = !video.volume
+    const volPos = video.volume ? 100 : 0
+    playerVolumeBtn.style.left = `${volPos}%`
+  })
+
+  playerVolume.addEventListener('click', (e) => {
+    const bar = $(e.currentTarget);
+    const newButtonPosition = e.pageX - bar.offset().left;
+    const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
+    const newPlayerVolume = (1 / 100) * buttonPosPercent;
+    playerVolumeBtn.style.left = `${buttonPosPercent}%`
+    video.volume = newPlayerVolume
+  })
+}) ()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

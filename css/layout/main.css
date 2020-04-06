@@ -174,8 +174,14 @@ p {
   }
 }
 .cover__image--pic {
-  width: 26.0625rem;
-  height: 26.5rem;
+  width: 417px;
+  height: 424px;
+}
+@media screen and (max-width: 320px) {
+  .cover__image--pic {
+    width: 370px;
+    height: 335px;
+  }
 }
 
 .scroll {
@@ -2341,10 +2347,6 @@ article {
   align-items: center;
 }
 
-.player-section__container {
-  width: 660px;
-  height: 370px;
-}
 .section__player-title {
   color: #2f3234;
   font-family: "Gagalinregular";
@@ -2352,15 +2354,80 @@ article {
   font-weight: 400;
   line-height: 54.18px;
 }
+@media screen and (max-width: 480px) {
+  .section__player-title {
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 414px) {
+  .section__player-title {
+    margin-bottom: 20px;
+  }
+}
 
 .player {
   position: relative;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 660px;
+  height: 405px;
+}
+@media screen and (max-width: 768px) {
+  .player {
+    width: 597px;
+    height: 364px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player {
+    width: 460px;
+    height: 254px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .player {
+    width: 360px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .player {
+    width: 290px;
+    height: 155px;
+  }
 }
 .player.active .player__splash {
   display: none;
+}
+.player .player__elem {
+  width: 660px;
+  height: 440px;
+}
+@media screen and (max-width: 768px) {
+  .player .player__elem {
+    width: 597px;
+    height: 399px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player .player__elem {
+    width: 455px;
+    height: 254px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .player .player__elem {
+    width: 360px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .player .player__elem {
+    width: 290px;
+    height: 155px;
+  }
 }
 .player .player__start {
   cursor: pointer;
@@ -2370,30 +2437,6 @@ article {
   height: 22px;
   background: url("../../image/icons/play.svg") center center/cover no-repeat;
 }
-.player.paused .player__start {
-  cursor: pointer;
-  position: relative;
-  background: none;
-  border: none;
-  outline: none;
-  width: 16px;
-  height: 22px;
-}
-.player.paused .player__start:after, .player.paused .player__start:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 5px;
-  top: 0;
-  bottom: 0;
-  background: #626262;
-}
-.player.paused .player__start:after {
-  right: 0;
-}
-.player.paused .player__start:before {
-  left: 0;
-}
 .player__controls {
   width: 100%;
   height: 35px;
@@ -2402,7 +2445,22 @@ article {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 5px;
+  padding: 0px 10px;
+}
+@media screen and (max-width: 480px) {
+  .player__controls {
+    width: 453px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .player__controls {
+    width: 359px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .player__controls {
+    width: 290px;
+  }
 }
 .player__wrapper {
   position: relative;
@@ -2419,6 +2477,11 @@ article {
   bottom: 0;
   cursor: pointer;
 }
+@media screen and (max-width: 360px) {
+  .player__splash {
+    width: 290px;
+  }
+}
 .player__splash-icon {
   width: 82px;
   height: 118px;
@@ -2428,6 +2491,17 @@ article {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .player__splash-icon {
+    fill: black;
+  }
+}
+@media screen and (max-width: 414px) {
+  .player__splash-icon {
+    width: 60px;
+    height: 60px;
+  }
 }
 .player__splash-icon:hover {
   opacity: 1;
@@ -2446,6 +2520,16 @@ article {
   border-radius: 1px;
   background-color: #626262;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .player__playback::before {
+    width: 280px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .player__playback::before {
+    width: 135px;
+  }
 }
 
 .player__playback-button, .player__volume-track-button {
@@ -2510,4 +2594,36 @@ article {
 .player_duration-completed,
 .player_duration-estimate {
   color: #626262;
+}
+
+.player__play {
+  cursor: pointer;
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  width: 16px;
+  height: 22px;
+}
+@media screen and (max-width: 768px) {
+  .player__play {
+    height: 20px;
+  }
+}
+.player__play:after, .player__play:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  border-radius: 1px;
+  top: 0;
+  bottom: 0;
+  left: 5;
+  background: #626262;
+}
+.player__play:after {
+  right: 0;
+}
+.player__play:before {
+  left: 0;
 }

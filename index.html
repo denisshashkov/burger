@@ -1192,15 +1192,7 @@
       
     </ul>
   
-    <div class="overlay">
-      <div class="popup"> 
-          <svg class="close-popup">
-            <use xlink:href="./image/svg/sprite.svg#clos"></use>
-          </svg>  
-        <span class="popup__name"></span>
-        <p class="popup__text"></p>          
-      </div>
-    </div>
+   
 
 </section>
 
@@ -1220,10 +1212,10 @@
 
     <div class="player-section__container">
 
-      <div class="player ">
+      <div class="player player--active">
 
         <div class="player__wrapper">
-          <div id="yt-player" class="player__elem"></div>
+          <video class="player__elem" src="./playervideo/promo.mp4"></video>
           <div class="player__splash">
             <svg class="player__splash-icon">
               <use xlink:href="./image/svg/sprite.svg#play"></use>
@@ -1233,7 +1225,6 @@
 
         <div class="player__controls">
           <button class="player__start">
-            
           </button>
           <div class="player__playback">           
             <button class="player__playback-button"></button>
@@ -1367,20 +1358,6 @@
 
     </form>
 
-    <div class="order-overlay">
-      <div class="order-popup">                
-        <p class="order__popup__text">Сообщение отправлено</p>
-        <button class="btn-close">закрыть</button>          
-      </div>
-    </div>
-
-    <div class="order-overlay-error">
-      <div class="order-popup">                
-        <p class="order__popup__text">произошла ошибка</p>
-        <button class="btn-close-error">закрыть</button>          
-      </div>
-    </div>
-    
     
     
     
@@ -1436,14 +1413,49 @@
 
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
    
     </main>
     
    
     
-  
+    <div class="overlay">
+      <div class="popup"> 
+          <svg class="close-popup">
+            <use xlink:href="./image/svg/sprite.svg#clos"></use>
+          </svg>  
+        <span class="popup__name"></span>
+        <p class="popup__text"></p>          
+      </div>
+    </div>
     
+    <div class="order-overlay">
+      <div class="order-popup">                
+        <p class="order__popup__text">Сообщение отправлено</p>
+        <button class="btn-close">закрыть</button>          
+      </div>
+    </div>
 
+    <div class="order-overlay-error">
+      <div class="order-popup">                
+        <p class="order__popup__text">произошла ошибка</p>
+        <button class="btn-close-error">закрыть</button>          
+      </div>
+    </div>
+    
+    
 
 
   <aside class="sidebar">
