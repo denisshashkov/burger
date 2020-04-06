@@ -400,31 +400,28 @@ ymaps.ready(init);
   
 
 
-  playerStart.addEventListener('click', () => {
-    if (video.paused) {
-      video.play();
-      playerSplash.style.opacity = "0";
-      
-    }
-    else {
-      video.pause();
-      playerSplash.style.opacity = "1";
-    }
-  })
 
-  playerSplash.addEventListener('click', () => {
-    if (video.paused) {
-      video.play();
-      playerSplash.style.opacity = "0";
-    }
-    else {
-      video.pause();
-      playerSplash.style.opacity = "1";
-      
-    }
-  })
+playerStart.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+    player.classList.add('player--active')
+  }
+  else {
+    video.pause();
+    player.classList.remove('player--active')
+  }
+})
 
-  
+playerSplash.addEventListener('click', () => {
+  video.play();
+})
+
+video.addEventListener('play', () => {
+  player.classList.add('player--active')
+})
+
+
+
 
 
   video.addEventListener('timeupdate', (event) => {
@@ -435,7 +432,7 @@ ymaps.ready(init);
 
   video.addEventListener('ended', function () {
     video.currentTime = 0;
-    playerSplash.style.display = "block"
+    player.classList.remove('player--active')
   });
 
   playerPlayback.addEventListener('click', (e) => {
@@ -462,19 +459,6 @@ ymaps.ready(init);
     video.volume = newPlayerVolume
   })
 }) ()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
