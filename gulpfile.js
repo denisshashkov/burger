@@ -33,7 +33,12 @@ task(
 
 task(
   "copy:image", () => {
-  return src("./image/**/*.png", "./image/**/*.svg").pipe(dest("dist/image")).pipe(reload({stream:true}));
+  return src("./image/**").pipe(dest("dist/image")).pipe(reload({stream:true}));
+});
+
+task(
+  "copy:playervideo", () => {
+  return src("./playervideo/**").pipe(dest("dist/playervideo")).pipe(reload({stream:true}));
 });
 
 const styles = [
@@ -108,4 +113,4 @@ task('server', () => {
 watch("./css/**/*.scss", series("styles"));
 watch("./*.html", series ("copy:html"));
 watch("scripts/*js", series ("scripts"));
-task ("default", series("clean", "copy:html", "copy:image", "styles", "scripts", "icons", "server"));
+task ("default", series("clean", "copy:html", "copy:image", "copy:playervideo", "styles", "scripts", "icons", "server"));
