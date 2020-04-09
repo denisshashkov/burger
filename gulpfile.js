@@ -31,6 +31,11 @@ task(
   return src("./*.html").pipe(dest("dist")).pipe(reload({stream:true}));
 });
 
+task(
+  "copy:image", () => {
+  return src("./image/**/*.png", "./image/**/*.svg").pipe(dest("dist/image")).pipe(reload({stream:true}));
+});
+
 const styles = [
   "node_modules/normalize.css/normalize.css",
   "css/layout/main.scss"
@@ -103,4 +108,4 @@ task('server', () => {
 watch("./css/**/*.scss", series("styles"));
 watch("./*.html", series ("copy:html"));
 watch("scripts/*js", series ("scripts"));
-task ("default", series("clean", "copy:html", "styles", "scripts", "icons", "server"));
+task ("default", series("clean", "copy:html", "copy:image", "styles", "scripts", "icons", "server"));
