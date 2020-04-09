@@ -33,7 +33,7 @@ close.addEventListener('click',function(){
 
 const menu = document.querySelector('.menu-choice'),
      accoitem = document.querySelectorAll('.menu-acco__item'),
-     accoContent = document.querySelector('.menu-acco__content');
+     accoContent = document.querySelector('.menu-acco__content'),
      accoitemlength = accoitem.length;
 
 menu.addEventListener('click', e => {
@@ -100,7 +100,7 @@ const form = document.querySelector('.form-wrap');
 const orderButton = document.querySelector('.btn-submit');
 const orderOverlay = document.querySelector('.order-overlay');
 const orderOverlayError = document.querySelector('.order-overlay-error');
-const closed = document.querySelector('.btn-close');
+const closedBtn = document.querySelector('.btn-close');
 const closeError = document.querySelector('.btn-close-error');
 const orderInput = document.querySelector('.order__input');
 
@@ -244,7 +244,7 @@ function validateField(field) {
   }
 }
 
-closed.addEventListener('click', e => {
+closedBtn.addEventListener('click', e => {
   orderOverlay.style.display = 'none';
   body.style.overflow = 'visible';
 })
