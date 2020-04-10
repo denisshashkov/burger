@@ -72,8 +72,9 @@ task( "styles", () => {
 
 
 const libs = [
-  "node_modules/jquery/dist/jquery.js",
-  "src/*.js"
+  //"node_modules/jquery/dist/jquery.js",
+  "src/*.js",
+  "library/jquery-3.4.1.min.js"
 ]
 
 task("scripts", () => {

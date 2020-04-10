@@ -14,12 +14,6 @@
 
 
 .we__best {
-  @include iphone6 {
-    margin-bottom: 0.9375rem;
-  }
-  @include samsung {
-    margin-bottom: 0.9375rem;
-  }
   display: flex;
   justify-content: center;
 }
@@ -80,7 +74,7 @@ max-width: 100%;
 .advantage__item{
   @include iphone {
     padding: 0;
-    
+    margin: 0;
   }
  @include phones {
    flex-direction: row;
@@ -88,7 +82,7 @@ max-width: 100%;
    margin-bottom: 3.125rem;
  }
  @include samsung {
-   margin: 0;
+   margin-bottom: 1.5625rem;
  }
   display: flex;
   flex-flow: column;
