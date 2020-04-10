@@ -50,9 +50,10 @@ margin: 0;
 }
 
 .section {
-  @include iphone {
+  @include samsung {
     min-height: 0;
   }
+ 
   display: flex;
   justify-content: center;
   width: 100%;

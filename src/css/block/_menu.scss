@@ -3,7 +3,7 @@
 }
 
 .menu-choice {
- @include iphone {
+ @include samsung {
    min-height: 0;
  }
   background: url('../../image/menu/photo-1428660386617-8d277e7deaf2.png') center center/cover no-repeat;

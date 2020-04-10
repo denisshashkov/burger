@@ -27,7 +27,7 @@
 }
 
 .order-section {
-  @include iphone {
+  @include samsung {
     min-height: 0;
   }
 

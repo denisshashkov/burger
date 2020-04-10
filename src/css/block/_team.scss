@@ -7,7 +7,7 @@
 
 
 .team {
-  @include iphone {
+  @include samsung {
     min-height: 0;
   }
   background: url("../../image/team/SBS_1255-X2.png") center center/cover no-repeat;

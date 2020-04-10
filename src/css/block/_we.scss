@@ -1,7 +1,7 @@
 
 
 .section-we {
-  @include iphone {
+  @include samsung {
     min-height: 0;
   }
   background: url(../../image/we/bg.png) center center/cover no-repeat;
@@ -11,6 +11,7 @@
   margin: 0;
   align-items: center;
 }
+
 
 .we__best {
   @include iphone6 {
@@ -47,9 +48,6 @@
   display: flex;
   justify-content: center;
   &__block{
-    @include samsung {
-      width: 50%;
-    }
     @include iphone {
       margin-bottom: 1.5625rem;
     }

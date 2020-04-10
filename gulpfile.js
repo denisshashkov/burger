@@ -80,9 +80,7 @@ task("scripts", () => {
   return src(libs)
   .pipe(sourcemaps.init())
   .pipe(concat('main.min.js', {newLine: ";"}))
-  .pipe(babel({
-    presets: ['@babel/env']
-}))
+  .pipe(babel({ presets: ['@babel/env']}))
   .pipe(uglify())
   .pipe(sourcemaps.write())
   .pipe(dest('dist'))  
