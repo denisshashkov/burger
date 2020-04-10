@@ -28,22 +28,28 @@ task( 'clean', () => {
 
 task(
   "copy:html", () => {
-  return src("./*.html").pipe(dest("dist")).pipe(reload({stream:true}));
+  return src("./src/*.html").pipe(dest("dist")).pipe(reload({stream:true}));
 });
 
 task(
   "copy:image", () => {
-  return src("./image/**").pipe(dest("dist/image")).pipe(reload({stream:true}));
+  return src("./src/image/**").pipe(dest("dist/image")).pipe(reload({stream:true}));
 });
 
 task(
+  "copy:fonts", () => {
+  return src("./src/fonts/**").pipe(dest("dist/fonts")).pipe(reload({stream:true}));
+});
+
+
+task(
   "copy:playervideo", () => {
-  return src("./playervideo/**").pipe(dest("dist/playervideo")).pipe(reload({stream:true}));
+  return src("./src/playervideo/**").pipe(dest("dist/playervideo")).pipe(reload({stream:true}));
 });
 
 const styles = [
   "node_modules/normalize.css/normalize.css",
-  "css/layout/main.scss"
+  "./src/css/layout/main.scss"
 ];
 
 task( "styles", () => {
@@ -60,14 +66,14 @@ task( "styles", () => {
   .pipe(gulpif(env === 'prod', gcmq())) 
   .pipe(gulpif(env === 'prod',cleanCSS()))
   .pipe(gulpif(env === 'dev',sourcemaps.write()))
-  .pipe(dest('dist'))  
+  .pipe(dest('./dist/css/layout'))  
   .pipe(reload({stream:true}));
 });
 
 
 const libs = [
   "node_modules/jquery/dist/jquery.js",
-  "scripts/*.js"
+  "src/*.js"
 ]
 
 task("scripts", () => {
@@ -113,4 +119,4 @@ task('server', () => {
 watch("./css/**/*.scss", series("styles"));
 watch("./*.html", series ("copy:html"));
 watch("scripts/*js", series ("scripts"));
-task ("default", series("clean", "copy:html", "copy:image", "copy:playervideo", "styles", "scripts", "icons", "server"));
+task ("default", series("clean", "copy:html", "copy:fonts", "copy:image", "copy:playervideo", "styles", "scripts", "icons", "server"));
