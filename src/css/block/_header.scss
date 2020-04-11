@@ -9,7 +9,6 @@ header {
 	@include tablets {
 		justify-content: space-between;
 	}
-
   display: flex;
   width: 68.75rem;
   justify-content: space-around;
@@ -106,6 +105,8 @@ header {
 	z-index: 3;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	overflow: hidden;
 	transition: 0.2s;
 	align-items: center;
@@ -113,6 +114,11 @@ header {
 	background-color: #2f3234;
 	}
 }
+
+ .body {
+	overflow: hidden;
+}
+
 
 
 .menu{
@@ -125,7 +131,6 @@ header {
 	}
   display: flex;
   justify-content: space-between;
-  padding-left: 0;
   list-style: none;
 }
 &__item {
@@ -160,6 +165,8 @@ header {
 }
 }
 
+
+
 .menu__item::before {
 	@include tablets {
 		width: 6px;
@@ -179,7 +186,12 @@ header {
   display: none;
 }
   
-
+.header__right {
+	@include tablets {
+		width: 5.375rem;
+	}
+	width: 4.375rem;
+}
 
 .btn {
   text-decoration: none;

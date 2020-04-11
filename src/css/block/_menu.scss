@@ -20,11 +20,12 @@
 .section-menu__title {
   @include phones {
     font-size: 3.125rem;
+    top: 2.5rem;
   }
 
   position: absolute;
-  left: 10%;
-  top: 20%;
+  left: 9%;
+  top: 16%;
   color: #ffffff;
   font-family: 'Gagalinregular';
   font-size: 4.5rem;
@@ -83,7 +84,8 @@
   font-weight: 400;
   line-height: 3.9844rem;
   position: absolute;
-  top: 92%;
+  top: 93%;
+  left: 25%;
   white-space: nowrap;
   transform: rotate(-90deg);
   transform-origin: 0 0;

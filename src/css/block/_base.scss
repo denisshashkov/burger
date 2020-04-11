@@ -22,12 +22,13 @@
 
 html,
 body {
-  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+h3 {
+  margin: 0;
+}
 
 p {
   font-family: 'Ubuntu';

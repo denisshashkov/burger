@@ -1,3 +1,5 @@
+
+
 .section-first-screen {
   background: url("../../image/first-screen/fon.png") center center/cover no-repeat;
   margin: 0;
@@ -20,7 +22,7 @@
     margin-bottom: 1.25rem;
   }
   display: flex;
-  padding-top: 4.25rem;
+  padding-left: 1.25rem;
   flex-flow: column;
   justify-content: center;
   max-width: 100%;
@@ -56,6 +58,10 @@
 }
 
 .cover__image--pic {
+  @include phones {
+    width: 22.0625rem;
+    height: 20.5rem;
+  }
   @include iphone6{
     padding: 5rem;
   }
@@ -70,36 +76,43 @@
   .first-screen__content{
     flex-direction: column;
     text-align: center;
+    padding-top: 3.5625rem;
   }
 }
 
 .first-screen__content {
-
+@include iphone6 {
+  padding: 0;
+  margin: 0;
+}
   display: flex;
   justify-content: center;
   flex: 0.9;
   align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 .cover__image {
+  @include tablets {
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
   @include iphone6 {
     height: 50vh;
     display: flex;
+    margin: 0;
   }
- 
+  padding-left: 50px;
+ padding-bottom: 3.75rem;
   align-items: center;
 &--pic {
-  @include iphone {
-    width: 370px;
-    height: 335px;;
-  }
-  width: 417px;
-  height: 424px;
+  width: 26.0625rem;
+  height: 26.5rem;
 }
 }
 
 .scroll {
-  
+  padding-left: 1.25rem;
   display: flex;
   justify-content: center;
 &__down {

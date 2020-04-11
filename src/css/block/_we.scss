@@ -16,6 +16,7 @@
 .we__best {
   display: flex;
   justify-content: center;
+  margin-bottom: 2.0625rem;
 }
 
 .we__best--title {
@@ -35,6 +36,7 @@
   font-family: "Gagalinregular";
   font-size: 4.5rem;
   font-weight: 400;
+  margin: 0;
 }
 
 .advantage {
@@ -80,6 +82,9 @@ max-width: 100%;
    flex-direction: row;
    width: 100%;
    margin-bottom: 3.125rem;
+   &:last-child {
+     margin-bottom: 0;
+   }
  }
  @include samsung {
    margin-bottom: 1.5625rem;
@@ -88,7 +93,6 @@ max-width: 100%;
   flex-flow: column;
   align-items: center;
   width: 32%;
-  padding: 0rem 0.9375rem;
 }
 
 .advantage__icon {

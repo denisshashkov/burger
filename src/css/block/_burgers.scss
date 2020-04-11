@@ -20,15 +20,17 @@
   display: flex;
 }
 
-.scroll {
+.scroll-slider {
   display: flex;
   align-items: center;
+  
+  
 }
 
 .scroll-left {
   cursor: pointer;
   transform: rotate(90deg);
-  width: 1.625rem;
+  width: 26px;
   height: 2.5625rem;
 }
 
@@ -36,7 +38,7 @@
 .scroll-right {
   cursor: pointer;
   transform: rotate(-90deg);
-  width: 1.625rem;
+  width: 26px;
   height: 2.5625rem;
 }
 
@@ -76,7 +78,11 @@
   }
 
   @include phones {
-    width: 19rem;
+    width: 25rem;
+    height: 15.875rem;
+  }
+  @include iphone6 {
+    width: 20rem;
     height: 11.875rem;
   }
 
@@ -100,6 +106,7 @@
     @include tablets {
       display: flex;
       justify-content: center;
+      
     }
   }
 
@@ -116,7 +123,7 @@
       padding: 0;
     }
 
-    padding-top: 0.9375rem;
+    padding-top: 2.9375rem;
   }
 
   &__title {
@@ -128,7 +135,7 @@
       padding: 0rem 0.625rem;
     }
 
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   &__title-name {
@@ -150,6 +157,8 @@
   }
 
   &__text {
+   
+    
     @include iphone {
       margin: 0;
     }
@@ -209,6 +218,7 @@
 
   @include phones {
     right: 0.625rem;
+    top: -1.375rem;
   }
 
   @include samsung {
@@ -244,10 +254,13 @@
 }
 
 .burger__image {
-  position: relative;
+  position:relative;
 }
 
-
+.burger__image-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .burger-compasition__item-title {
   @include tablets {
@@ -317,7 +330,7 @@
 .burger__image-icon {
   @include tablets {
     position: absolute;
-    left: 5rem;
+    left: 2rem;
   }
 
   @include samsung {
@@ -326,7 +339,12 @@
   }
 
   @include phones {
-    left: -10px;
+    left: -3px;
+    top: -23px;
+  }
+  @include iphone {
+    left: -13px;
+    top: -23px;
   }
 
   border: none;
@@ -408,20 +426,24 @@
 
 .burger__image-icon-wrapp:hover .burger-compasition {
   @include tablets {
-     left: 10.625rem;
+     left: 7.5rem;
      width: 20.0625rem;
   }
   @include phones {
-     left: 5rem;
+     left: 87px;
+     top: -22px;
      width: 15.625rem;
     }
     @include iphone6 {
-      left: 5rem;
+      left: 87px;
       width: 14.375rem;
     }
     @include samsung {
-      left: 3.75rem;
+      left: 67px;
       width: 11.25rem ;
+    }
+    @include iphone {
+      left: 57px;
     }
   opacity: 0.9;
   transition:  0.2s ;
@@ -441,8 +463,12 @@
 }
 
 .burger__list {
+  @include tablets {
+    padding-top: 100px;
+  }
   @include phones {
     width: 90%;
+    padding-top: 22px;
   }
 @include iphone6 {
   width: 87%;

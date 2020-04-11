@@ -59,7 +59,7 @@
   font-size: 4.5rem;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 28px;
 }
 
 .order-left {
@@ -101,7 +101,7 @@
   }
 
   display: flex;
-  margin-bottom: 1.25rem;
+  margin-bottom: 17px;
 
   &:nth-child(3) {
     margin-bottom: 0;
@@ -155,6 +155,7 @@
 .order__input--textarea {
   @include tablets {
     width: 29.5rem;
+    margin-bottom: 11px;
   }
 
   @include phones {

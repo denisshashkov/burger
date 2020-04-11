@@ -6,7 +6,7 @@ const hamburger = document.querySelector('.hamburger-menu-link');
 const activemenu = document.querySelector('.menu-active');
 const close = document.querySelector('.close-hamburger');
 const logo = document.querySelector('.logo');
-const body = document.querySelector('body');
+const body = document.querySelector('.body');
 
 hamburger.addEventListener( 'click', function(e) {
   e.preventDefault();

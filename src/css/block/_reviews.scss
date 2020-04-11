@@ -61,8 +61,10 @@
 
 .review__hover {
   @include tablets {
-    padding: 0;
     text-align: center;
+  }
+  @include samsung {
+    padding: 0.8125rem 1.875rem 2.9375rem 1.1875rem;
   }
  
   position: absolute;
@@ -86,6 +88,7 @@
 .review__name {
   @include phones {
     font-size: 1.5rem;
+    margin-bottom: 10px;
   }
   @include iphone {
     font-size: 0.875rem;
@@ -101,12 +104,11 @@
 .review__text {
   @include tablets {
     padding: 0rem 1.25rem;
-    margin: 0;
   }
   @include phones {
     display: none;
   }
-  margin-top: 1.875rem;
+  
   margin-bottom: 1.25rem;
   padding-right: 3.125rem;
   color: #ffffff;
