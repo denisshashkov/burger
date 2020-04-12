@@ -7,7 +7,8 @@ const hamburger = document.querySelector('.hamburger-menu-link'),
       close = document.querySelector('.close-hamburger'),
       logo = document.querySelector('.logo'),
       maincontent = document.querySelector('.maincontent'),
-      menuLink = document.querySelectorAll('.menu__link'),
+      menuLink = document.querySelector('.menu__link'),
+      menuItem = document.querySelector('.menu__item'),
       menuLinklength = menuLink.length;
 
 hamburger.addEventListener( 'click', function(e) {
@@ -26,7 +27,7 @@ close.addEventListener('click',function(){
   maincontent.classList.remove("lock");
 })
 
-menuLink.addEventListener('click', e => {
+menuItem.addEventListener('click', e => {
   for (let i = 0; i<menuLinklength; i++) {
     activemenu.style.height = 0;
   close.style.opacity = 0;
@@ -34,7 +35,6 @@ menuLink.addEventListener('click', e => {
   maincontent.classList.remove("lock");
   }
   });
-
 
 
 //////////////меню аккордеон/////////////////////////
