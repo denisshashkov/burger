@@ -6,7 +6,7 @@ const hamburger = document.querySelector('.hamburger-menu-link');
 const activemenu = document.querySelector('.menu-active');
 const close = document.querySelector('.close-hamburger');
 const logo = document.querySelector('.logo');
-const body = document.querySelector('body');
+const maincontent = document.querySelector('.maincontent');
 
 
 hamburger.addEventListener( 'click', function(e) {
@@ -15,14 +15,14 @@ hamburger.addEventListener( 'click', function(e) {
   activemenu.style.height = heightValue;
   close.style.opacity = 1;
   logo.style.position = 'fixed';
-  body.classList.add('lock');
+  maincontent.classList.add('lock');
 });
 
 close.addEventListener('click',function(){
   activemenu.style.height = 0;
   close.style.opacity = 0;
   logo.style.position = 'relative';
-  body.classList.remove("lock");
+  maincontent.classList.remove("lock");
 })
 
 
@@ -480,7 +480,7 @@ const performTransition = (sectionEq) => {
     inScroll = true;
     const position =  sectionEq * -100;
    
-    if ($("body").hasClass("lock")){
+    if ($("maincontent").hasClass("lock")){
       return;
     }
     

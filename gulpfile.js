@@ -15,6 +15,7 @@ const svgo = require("gulp-svgo");
 const svgSprite = require("gulp-svg-sprite")
 const gulpif = require('gulp-if');
 
+
 const env = process.env.NODE_ENV;
 
 sass.compiler = require('node-sass');
@@ -72,9 +73,10 @@ task( "styles", () => {
 
 
 const libs = [
-  //"node_modules/jquery/dist/jquery.js",
+  "node_modules/jquery/dist/jquery.min.js",
   "src/*.js",
-  "library/jquery-3.4.1.min.js"
+  "node_modules/mobile-detect/mobile-detect.min.js",
+  "node_modules/jquery-touchswipe/jquery.touchswipe.min.js"
 ]
 
 task("scripts", () => {
