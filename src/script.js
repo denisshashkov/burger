@@ -6,10 +6,8 @@ const hamburger = document.querySelector('.hamburger-menu-link'),
       activemenu = document.querySelector('.menu-active'),
       close = document.querySelector('.close-hamburger'),
       logo = document.querySelector('.logo'),
-      maincontent = document.querySelector('.maincontent'),
-      menuLink = document.querySelector('.menu__link'),
-      menuItem = document.querySelector('.menu__item'),
-      menuLinklength = menuLink.length;
+      maincontent = document.querySelector('.maincontent');
+  
 
 hamburger.addEventListener( 'click', function(e) {
   e.preventDefault();
@@ -27,14 +25,6 @@ close.addEventListener('click',function(){
   maincontent.classList.remove("lock");
 })
 
-menuItem.addEventListener('click', e => {
-  for (let i = 0; i<menuLinklength; i++) {
-    activemenu.style.height = 0;
-  close.style.opacity = 0;
-  logo.style.position = 'relative';
-  maincontent.classList.remove("lock");
-  }
-  });
 
 
 //////////////меню аккордеон/////////////////////////
@@ -551,6 +541,11 @@ if (tagName != "input" && tagName != "textarea") {
 /////////////////////////////////////////
 $("[data-scroll-to]").on("click", e => {
   e.preventDefault();
+
+  activemenu.style.height = 0;
+  close.style.opacity = 0;
+  logo.style.position = 'relative';
+  maincontent.classList.remove("lock");
 
   const $this = $(e.currentTarget);
   const target = $this.attr("data-scroll-to");
