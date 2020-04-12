@@ -2,12 +2,13 @@
 
 ///////////////полноэкранное меню///////////////
 
-const hamburger = document.querySelector('.hamburger-menu-link');
-const activemenu = document.querySelector('.menu-active');
-const close = document.querySelector('.close-hamburger');
-const logo = document.querySelector('.logo');
-const maincontent = document.querySelector('.maincontent');
-
+const hamburger = document.querySelector('.hamburger-menu-link'),
+      activemenu = document.querySelector('.menu-active'),
+      close = document.querySelector('.close-hamburger'),
+      logo = document.querySelector('.logo'),
+      maincontent = document.querySelector('.maincontent'),
+      menuLink = document.querySelectorAll('.menu__link'),
+      menuLinklength = menuLink.length;
 
 hamburger.addEventListener( 'click', function(e) {
   e.preventDefault();
@@ -16,7 +17,7 @@ hamburger.addEventListener( 'click', function(e) {
   close.style.opacity = 1;
   logo.style.position = 'fixed';
   maincontent.classList.add('lock');
-});
+})
 
 close.addEventListener('click',function(){
   activemenu.style.height = 0;
@@ -25,8 +26,14 @@ close.addEventListener('click',function(){
   maincontent.classList.remove("lock");
 })
 
-
-
+menuLink.addEventListener('click', e => {
+  for (let i = 0; i<menuLinklength; i++) {
+    activemenu.style.height = 0;
+  close.style.opacity = 0;
+  logo.style.position = 'relative';
+  maincontent.classList.remove("lock");
+  }
+  });
 
 
 
@@ -476,13 +483,14 @@ const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile();
 /////////////////////////////////////////
 const performTransition = (sectionEq) => {
+  if ($(".maincontent").hasClass("lock")){
+    return;
+  }
   if (inScroll === false) {
     inScroll = true;
     const position =  sectionEq * -100;
    
-    if ($("maincontent").hasClass("lock")){
-      return;
-    }
+    
     
     sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
   
