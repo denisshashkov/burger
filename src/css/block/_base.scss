@@ -18,7 +18,10 @@
   -webkit-transition: 0.3s;
 }
 
-
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
 
 html,
 body {

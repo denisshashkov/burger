@@ -22,7 +22,7 @@ close.addEventListener('click',function(){
   activemenu.style.height = 0;
   close.style.opacity = 0;
   logo.style.position = 'relative';
-  
+  body.classList.remove("lock");
 })
 
 
@@ -479,7 +479,11 @@ const performTransition = (sectionEq) => {
   if (inScroll === false) {
     inScroll = true;
     const position =  sectionEq * -100;
-
+   
+    if ($("body").hasClass("lock")){
+      return;
+    }
+    
     sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
   
     display.css({
@@ -490,8 +494,12 @@ const performTransition = (sectionEq) => {
      $(".nav__item").eq(sectionEq).addClass(" nav__item--active").siblings().removeClass("nav__item--active");
      inScroll = false;
    },500);
-  }
+   
 };
+
+  }
+
+
 /////////////////////////////////////
   const scrollSection = direction => {
     const activeSection = sections.filter(".active");
@@ -597,27 +605,4 @@ if (isMobile) {
 
 
 
-
-////////////////////SLIDER JQUERY///////////////////
-
-/*$(function() {
-
-  $('.scroll-right').on('click',function(e) {
-    e.preventDefault();
-
-    var $this = $(this),
-         container =$this.closest('.burger__list-wrapp'),
-        items = container.find('.burger__item'),
-        activeSlide = items.filter('.active'),
-         reqitem = activeSlide.next(),
-         reqindex = reqitem.index(),
-         list = container.find('.burger__list'),
-         duration = 500;
-
-     list.animate({
-       'left':-reqindex*100+'%'
-     },duration);   
-
-  })
-})*/
 
