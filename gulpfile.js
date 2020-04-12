@@ -74,9 +74,9 @@ task( "styles", () => {
 
 const libs = [
   "node_modules/jquery/dist/jquery.min.js",
-  "src/*.js",
   "node_modules/mobile-detect/mobile-detect.min.js",
-  "node_modules/jquery-touchswipe/jquery.touchswipe.min.js"
+  "node_modules/jquery-touchswipe/jquery.touchswipe.min.js",
+  "src/*.js"
 ]
 
 task("scripts", () => {
