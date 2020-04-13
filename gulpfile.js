@@ -112,7 +112,7 @@ task('server', () => {
       server: {
           baseDir: "./dist"
       },
-      open:false
+      open:true
   });
 });
 

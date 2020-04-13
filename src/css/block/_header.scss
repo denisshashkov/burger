@@ -16,9 +16,13 @@ header {
 }
 
 .logo {
+	@include tablets {
+		left: 0;
+	}
 	position: relative;
 		z-index: 10;
-		top: 10px;
+		top: 3px;
+    left: -10px
 }
 
 
@@ -131,7 +135,9 @@ header {
 	}
   display: flex;
   justify-content: space-between;
-  list-style: none;
+	list-style: none;
+	width: 44.375rem;
+    padding-left: 1.5625rem;
 }
 &__item {
 	@include tablets {
@@ -188,9 +194,12 @@ header {
   
 .header__right {
 	@include tablets {
-		width: 5.375rem;
+		width: 94px;
 	}
-	width: 4.375rem;
+	@include phones {
+		width: 90px;
+	}
+	width: 65px;
 }
 
 .btn {

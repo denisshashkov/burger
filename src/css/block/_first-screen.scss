@@ -13,35 +13,43 @@
 
 .slogan {
   @include iphone6 {
-    padding-top: 0.625rem;
+    padding-top: 10px;
   }
   @include samsung {
     padding-top: 0;
   }
-  @include iphone {
-    margin-bottom: 1.25rem;
-  }
+ 
   display: flex;
-  padding-left: 1.25rem;
+  padding-left: 11px;
+  padding-bottom: 1rem;
   flex-flow: column;
   justify-content: center;
   max-width: 100%;
 &__title {
+  @include tablets {
+    line-height: 5.3125rem;
+    margin-bottom: 1.4375rem;
+  }
   @include phones {
     font-size: 3.9375rem;
+    margin-bottom: 0;
   }
   @include iphone6 {
     font-size: 2.5rem;
+    line-height: 2.5rem;
   }
   color: #f9b43b;
   font-family: "gagalinregular";
-  font-size: 4.5rem;
+  font-size: 72px;
   font-weight: 400;
+  line-height: 109px;
+  
 }
 &__text {
   @include tablets {
-    margin-top: 0.625rem;
+    
     width: 99%;
+    line-height: 60px;
   }
 
   @include phones {
@@ -49,11 +57,13 @@
   }
   @include iphone6 {
     font-size: 2.0625rem;
+    line-height: 3.125rem;
   }
   font-family: "lifehackmedium";
   color: #ffffff;
   font-size: 4.0625rem;
   font-weight: 500;
+  line-height: 4.0625rem;
 }
 }
 
@@ -68,19 +78,24 @@
   @include samsung {
     padding: 5rem;
   }
-  width: 30.25rem;
-  height: 14.0625rem;
+  width: 28.375rem;
+  height: 26.5rem;
 }
 
 @media screen and (max-width: 768px) {
   .first-screen__content{
+   
     flex-direction: column;
     text-align: center;
-    padding-top: 3.5625rem;
+    padding-top: 3.375rem;
   }
 }
 
 .first-screen__content {
+  @include phones {
+    padding-top: 1.75rem;
+    margin-bottom: 3rem;
+  }
 @include iphone6 {
   padding: 0;
   margin: 0;
@@ -89,7 +104,7 @@
   justify-content: center;
   flex: 0.9;
   align-items: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.125rem;
 }
 
 .cover__image {
@@ -97,27 +112,27 @@
     padding: 0;
     margin-bottom: 1.25rem;
   }
+  @include phones {
+    padding-left: 0.625rem;
+    margin-bottom: 2.25rem;
+  }
   @include iphone6 {
     height: 50vh;
     display: flex;
     margin: 0;
   }
-  padding-left: 50px;
- padding-bottom: 3.75rem;
+  padding-left: 1.3125rem;
+ padding-bottom: 3.5625rem;
   align-items: center;
-&--pic {
-  width: 26.0625rem;
-  height: 26.5rem;
-}
 }
 
 .scroll {
-  padding-left: 1.25rem;
+  padding-left: 0.875rem;
   display: flex;
   justify-content: center;
 &__down {
-  width: 1.8125rem;
-  height: 0.875rem;
+  width: 29px;
+  height: 14px;
   background: url("../../image/first-screen/icon/arrow-scroll.svg");
   border: none;
   cursor: pointer;
@@ -131,12 +146,3 @@
 }
 }
 
-.scroll{
-
-  @include tablets {
-    margin-top: 1.875rem;
-  }
-  @include samsung {
-    margin-top: 0;
-  }
-}
