@@ -1,0 +1,41 @@
+@function rem($px){
+  @return $px/16px+0rem;
+}
+
+
+@mixin tablets {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin phones{
+  @media screen and (max-width: 480px){
+    @content;
+  }
+}
+
+@mixin iphone{
+  @media screen and (max-width: 320px){
+    @content;
+  }
+}
+
+@mixin iphone6 {
+@media screen and (max-width: 414px){
+  @content;
+}
+}
+
+@mixin samsung {
+  @media screen and (max-width: 360px){
+    @content;
+  }
+}
+
+@mixin middle {
+  @media screen and (max-width: 580px){
+    @content;
+  }
+}

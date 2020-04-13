@@ -1,0 +1,224 @@
+header {
+	max-width: 100%;
+  height: 5.625rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+	@include tablets {
+		justify-content: space-between;
+	}
+  display: flex;
+  width: 68.75rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+	@include tablets {
+		left: 0;
+	}
+	position: relative;
+		z-index: 10;
+		top: 3px;
+    left: -10px
+}
+
+
+
+.header__left {
+	@include tablets {
+		flex: 1;
+	}
+	@include phones {
+		flex: 1;
+	}
+	
+}
+
+.header__links{
+	cursor: pointer;
+}
+
+
+
+.close-hamburger {
+	position: fixed;
+	border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  width: 1.25rem;
+	height: 1.25rem;
+	z-index: 10;
+	right: 3.125rem;
+	opacity: 0;
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.1s;
+  }
+}
+
+
+.hamburger-menu-link {
+	@include tablets {
+		display: flex;
+	}
+	vertical-align: middle;
+	position: relative;
+	height: 1.375rem;
+	align-items: center;
+	margin-left: 1.875rem;
+	display: none;
+	
+}
+
+
+
+.hamburger-menu-link__bars {
+	&, &:before, &:after {
+		background: #fff;
+		width: 1.5rem;
+		height: 5px;
+		border-radius: 3px;
+	}
+
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+}
+
+.lock {
+	overflow: hidden;
+}
+
+.menu-active {
+	@include tablets{
+	height: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	transition: 0.2s;
+	align-items: center;
+	justify-content: center;
+	background-color: #2f3234;
+	}
+}
+
+ 
+
+
+.menu{
+
+ display: flex;
+ align-items: center;
+&__list {
+	@include tablets{
+		flex-direction: column;
+		margin: 0;
+	}
+  display: flex;
+  justify-content: space-between;
+	list-style: none;
+	width: 44.375rem;
+    padding-left: 1.5625rem;
+}
+&__item {
+	@include tablets {
+		flex-direction: column;
+		height: 5rem;
+		justify-content: space-around;
+		&:nth-child(6){
+			display: none;
+		}
+	}
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+&__link:hover {
+  transition: 0.3s;
+	color: #EAAA38;
+}
+&__link {
+	@include tablets {
+		font-size: 1.5rem;
+		margin: 0;
+	}
+  text-decoration: none;
+  margin-left: 0.8125rem;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+}
+
+
+
+.menu__item::before {
+	@include tablets {
+		width: 6px;
+		height: 6px;
+		margin: 0;
+	}
+  content: "";
+  margin-left: 0.8125rem;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.menu__item:first-child:before {
+  display: none;
+}
+  
+.header__right {
+	@include tablets {
+		width: 94px;
+	}
+	@include phones {
+		width: 90px;
+	}
+	width: 65px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.6875rem 0.9375rem;
+  background-color: #e45028;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 0.8125rem;
+	font-weight: 500;
+	outline: none;
+  //line-height: 1.875rem;
+  text-transform: uppercase;
+&:hover {
+  cursor: pointer;
+  background-color: #c1401e;
+  transition: 0.3s;
+}
+}
+

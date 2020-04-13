@@ -1,0 +1,314 @@
+.player-section {
+  background: url('../../image/player/backimage.png')center center/cover no-repeat;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__player-title {
+  @include tablets {
+    font-size: 4.5rem;
+    margin-bottom: 0.75rem;
+    padding-top: 62px;
+  }
+  @include phones {
+    font-size: 3.125rem;
+font-weight: 400;
+text-align: center;
+margin-bottom: 2.5rem;
+padding: 0rem 2.5rem;
+
+  }
+  @include iphone6 {
+    margin-bottom: 1.25rem;
+  }
+  
+  color: #2f3234;
+  font-family: 'Gagalinregular';
+  font-size: 3.8125rem;
+  font-weight: 400;
+  line-height: 3.3862rem;
+  margin: 0;
+  padding-bottom: 2.1875rem;
+  padding-left: 1.0625rem;
+}
+
+.player {
+  @include tablets {
+    width: 44.3125rem;
+    height: 26.75rem;
+  }
+  @include phones {
+    width: 28.75rem;
+height: 15.875rem;
+  }
+  @include iphone6 {
+    width: 22.5rem;
+    height: 12.5rem;
+  }
+  @include samsung {
+    width: 18.125rem;
+    height: 9.6875rem;
+  }
+  position: relative;
+  display: block;
+  width: 660px;
+    height: 405px;
+
+  &.active .player__splash {
+    display: none;
+  }
+
+  
+
+  .player__elem {
+    @include tablets {
+      width: 37.3125rem;
+    height: 24.9375rem;
+    }
+    
+    @include phones {
+      width: 28.4375rem;
+      height: 12.625rem;
+    }
+    @include iphone6 {
+      width: 22.5rem;
+    }
+    @include samsung {
+      width: 18.125rem;
+    }
+    cursor: pointer;
+    width: 41.25rem;
+    height: 27.5rem;
+  }
+
+
+
+  &__controls {
+    @include phones {
+      width: 28.3125rem;
+    }
+    @include iphone6 {
+      width: 22.4375rem;
+      height: 1.875rem;
+    }
+    @include samsung {
+      width: 18.125rem;
+      height: 1.6875rem;
+    }
+    width: 100%;
+    height: 2.1875rem;
+    position: absolute;
+    background-color: #3e3e3e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.player__splash {
+  @include samsung {
+    width: 18.125rem;
+  }
+ 
+  background: url('../../image/player/Photo.png')center center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+
+  &-icon {
+    @include tablets {
+      fill: black;
+      width: 7.125rem;
+    height: 10.375rem;
+    }
+    @include phones {
+      width: 5.125rem;
+    height: 7.375rem;
+    }
+    @include iphone6 {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+    width: 5.125rem;
+    height: 7.375rem;
+    fill: #fff;
+    opacity: 0.8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+.player__playback {
+  position: relative;
+}
+
+.player__playback::before {
+  @include phones {
+    width: 280px;
+  }
+  @include iphone6 {
+    width: 8.4375rem;
+  }
+  content: '';
+  position: relative;
+  display: block;
+  width: 27.75rem;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #626262;
+  cursor: pointer;
+}
+
+.player__playback-button, .player__volume-track-button {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  background-color: #626262;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  top: -100%;
+  left: 0%;
+}
+
+
+.player__volume {
+  display: flex;
+  align-items: center;
+}
+
+.player__volume-icon {
+  width: 1.125rem;
+  height: 1.375rem;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  margin-right: 1.125rem;
+
+  &-pic {
+    width: 1.125rem;
+    height: 1.375rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fill: #fff;
+    opacity: 0.2;
+    cursor: pointer;
+  }
+}
+
+.player__volume-track {
+  position: relative;
+}
+
+.player__volume-track::before {
+  content: '';
+  position: relative;
+  display: block;
+  width: 3.625rem;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #626262;
+  cursor: pointer;
+}
+  .player__volume-track-button {
+   
+    top: -100%;
+    left: 78%;
+  }
+
+
+.player_duration-completed,
+.player_duration-estimate {
+  color: #626262;
+}
+
+
+
+.player__start {
+  background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    padding: 0;
+    height: 1.375rem;
+    cursor: pointer;
+}
+
+.player__play{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border: 0.875rem solid transparent;
+  border-left-color: #626262;
+  border-radius: 6px;
+  border-right-width: 0;
+  background: none;
+}
+
+
+.player {
+  &--active {
+    .player__elem {
+      opacity: 1;
+    }
+
+    .player__splash {
+      display: none;
+    }
+
+    .player__play {
+      width: 0.875rem;
+      height: 1.375rem;
+      border: none;
+
+      &:after,
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 5px;
+        border-radius: 1px;
+        top: 0;
+        bottom: 0;
+        background: #626262;
+      }
+      &:after {
+        right: 0;
+      }
+      &:before {
+        left: 0;
+      }
+    }
+  }
+}
